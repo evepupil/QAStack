@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
-import { getAllTools, getToolBySlug } from '@/lib/keystatic';
+import { getAllTools, getToolBySlug } from '@/lib/tools';
 
 interface ToolPageProps {
   params: Promise<{
@@ -47,8 +47,8 @@ export default async function ToolPage({ params }: ToolPageProps) {
     freemium: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
   };
 
-  // Get the content
-  const Content = await tool.content();
+  // Get the content (already HTML from markdown)
+  const contentHtml = tool.content;
 
   return (
     <main className="min-h-screen">
@@ -56,7 +56,7 @@ export default async function ToolPage({ params }: ToolPageProps) {
       <header className="border-b bg-card px-8 py-6">
         <div className="mx-auto max-w-4xl">
           <Link
-            href="/"
+            href="/tools"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -115,9 +115,10 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
       {/* Content */}
       <article className="px-8 py-12">
-        <div className="prose prose-slate dark:prose-invert mx-auto max-w-4xl">
-          <Content />
-        </div>
+        <div
+          className="prose prose-slate dark:prose-invert mx-auto max-w-4xl"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
       </article>
     </main>
   );

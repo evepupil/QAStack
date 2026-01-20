@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "playwright",
+    "title": "Playwright",
+    "logo": "/images/tools/playwright.png",
+    "description": "Modern end-to-end testing framework by Microsoft. Supports multiple browsers with a single API.",
+    "affiliateLink": "https://playwright.dev/",
+    "pricing": "free",
+    "tags": ["automation", "e2e-testing", "ui-testing"],
+    "content": "playwright.md"
+  },
+  {
+    "slug": "jest",
+    "title": "Jest",
+    "logo": "/images/tools/jest.png",
+    "description": "Delightful JavaScript testing framework with a focus on simplicity. Works with React, Vue, Angular, and more.",
+    "affiliateLink": "https://jestjs.io/",
+    "pricing": "free",
+    "tags": ["unit-testing", "automation"],
+    "content": "jest.md"
+  },
+  {
+    "slug": "selenium",
+    "title": "Selenium",
+    "logo": "/images/tools/selenium.png",
+    "description": "Browser automation framework for web application testing. Supports multiple programming languages and browsers.",
+    "affiliateLink": "https://www.selenium.dev/",
+    "pricing": "free",
+    "tags": ["automation", "ui-testing", "browser-automation"],
+    "content": "selenium.md"
+  },
+  {
+    "slug": "cypress",
+    "title": "Cypress",
+    "logo": "/images/tools/cypress.png",
+    "description": "Fast, easy and reliable testing for anything that runs in a browser. Modern end-to-end testing framework.",
+    "affiliateLink": "https://www.cypress.io/",
+    "pricing": "freemium",
+    "tags": ["e2e-testing", "ui-testing", "automation"],
+    "content": "cypress.md"
+  },
+  {
+    "slug": "postman",
+    "title": "Postman",
+    "logo": "/images/tools/postman.png",
+    "description": "API development and testing platform with powerful collaboration features for teams.",
+    "affiliateLink": "https://www.postman.com/",
+    "pricing": "freemium",
+    "tags": ["api-testing", "automation"],
+    "content": "postman.md"
+  },
+  {
+    "slug": "jmeter",
+    "title": "Apache JMeter",
+    "logo": "/images/tools/jmeter.png",
+    "description": "Open-source load testing tool for analyzing and measuring performance of various services.",
+    "affiliateLink": "https://jmeter.apache.org/",
+    "pricing": "free",
+    "tags": ["performance", "load-testing"],
+    "content": "jmeter.md"
+  }
+]

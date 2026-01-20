@@ -1,4 +1,4 @@
-import { getAllTools } from '@/lib/keystatic';
+import { getAllTools } from '@/lib/tools';
 import { ToolCard } from '@/components/ToolCard';
 import { Sidebar } from '@/components/Sidebar';
 import { Search } from 'lucide-react';
@@ -12,8 +12,8 @@ export default async function ToolsPage() {
       <Sidebar />
 
       {/* Main Content */}
-      <main className="flex-1">
-        <div className="container max-w-6xl px-8 py-12">
+      <main className="flex-1 flex justify-center">
+        <div className="w-full max-w-7xl px-8 py-12">
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-4xl font-bold mb-4">
@@ -42,15 +42,11 @@ export default async function ToolsPage() {
           {tools.length === 0 ? (
             <div className="rounded-lg border border-dashed p-12 text-center">
               <p className="text-lg text-muted-foreground">
-                No tools found. Visit{' '}
-                <a href="/keystatic" className="font-medium text-primary hover:underline">
-                  /keystatic
-                </a>{' '}
-                to add your first tool.
+                No tools found. Add tools by editing data/tools.json
               </p>
             </div>
           ) : (
-            <div className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {tools.map((tool) => (
                 <ToolCard key={tool.slug} tool={tool} />
               ))}
