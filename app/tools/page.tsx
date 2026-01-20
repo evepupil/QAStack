@@ -7,13 +7,13 @@ export default async function ToolsPage() {
   const tools = await getAllTools();
 
   return (
-    <div className="flex min-h-screen">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="flex justify-center min-h-screen">
+      <div className="flex w-full max-w-[1600px]">
+        {/* Sidebar */}
+        <Sidebar />
 
-      {/* Main Content */}
-      <main className="flex-1 flex justify-center">
-        <div className="w-full max-w-7xl px-8 py-12">
+        {/* Main Content */}
+        <main className="flex-1 px-8 py-12">
           {/* Header */}
           <div className="mb-8">
             <h1 className="text-4xl font-bold mb-4">
@@ -52,8 +52,8 @@ export default async function ToolsPage() {
               ))}
             </div>
           )}
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
