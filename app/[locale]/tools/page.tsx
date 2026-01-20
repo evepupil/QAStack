@@ -1,10 +1,16 @@
 import { getAllTools } from '@/lib/tools';
 import { ToolCard } from '@/components/ToolCard';
 import { Sidebar } from '@/components/Sidebar';
+import { Locale } from '@/lib/i18n';
 import { Search } from 'lucide-react';
 
-export default async function ToolsPage() {
-  const tools = await getAllTools();
+interface ToolsPageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function ToolsPage({ params }: ToolsPageProps) {
+  const { locale } = await params;
+  const tools = await getAllTools(locale as Locale);
 
   return (
     <div className="flex justify-center min-h-screen">
@@ -48,7 +54,7 @@ export default async function ToolsPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {tools.map((tool) => (
-                <ToolCard key={tool.slug} tool={tool} />
+                <ToolCard key={tool.slug} tool={tool} locale={locale as Locale} />
               ))}
             </div>
           )}

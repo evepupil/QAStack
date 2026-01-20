@@ -3,23 +3,31 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { getAllTools, getToolBySlug } from '@/lib/tools';
+import { locales, Locale } from '@/lib/i18n';
+import { getTranslations } from '@/lib/translations';
 
 interface ToolPageProps {
   params: Promise<{
+    locale: string;
     slug: string;
   }>;
 }
 
 export async function generateStaticParams() {
-  const tools = await getAllTools();
-  return tools.map((tool) => ({
-    slug: tool.slug,
-  }));
+  const params = [];
+  for (const locale of locales) {
+    const tools = await getAllTools(locale);
+    params.push(...tools.map((tool) => ({
+      locale,
+      slug: tool.slug,
+    })));
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }: ToolPageProps) {
-  const { slug } = await params;
-  const tool = await getToolBySlug(slug);
+  const { locale, slug } = await params;
+  const tool = await getToolBySlug(slug, locale as Locale);
 
   if (!tool) {
     return {
@@ -34,8 +42,9 @@ export async function generateMetadata({ params }: ToolPageProps) {
 }
 
 export default async function ToolPage({ params }: ToolPageProps) {
-  const { slug } = await params;
-  const tool = await getToolBySlug(slug);
+  const { locale, slug } = await params;
+  const tool = await getToolBySlug(slug, locale as Locale);
+  const t = getTranslations(locale as Locale);
 
   if (!tool) {
     notFound();
@@ -47,20 +56,18 @@ export default async function ToolPage({ params }: ToolPageProps) {
     freemium: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
   };
 
-  // Get the content (already HTML from markdown)
   const contentHtml = tool.content;
 
   return (
     <main className="min-h-screen">
-      {/* Header */}
       <header className="border-b bg-card px-8 py-6">
         <div className="mx-auto max-w-4xl">
           <Link
-            href="/tools"
+            href={`/${locale}/tools`}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to all tools
+            {t.tools.backToTools}
           </Link>
 
           <div className="flex items-start gap-6">
@@ -81,7 +88,7 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
               <div className="flex flex-wrap items-center gap-3">
                 <span className={`rounded-full px-3 py-1 text-sm font-medium ${pricingColors[tool.pricing]}`}>
-                  {tool.pricing.charAt(0).toUpperCase() + tool.pricing.slice(1)}
+                  {t.tools[tool.pricing]}
                 </span>
 
                 <a
@@ -90,14 +97,13 @@ export default async function ToolPage({ params }: ToolPageProps) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
-                  Visit Website
+                  {t.tools.visitWebsite}
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Tags */}
           {tool.tags.length > 0 && (
             <div className="mt-6 flex flex-wrap gap-2">
               {tool.tags.map((tag) => (
@@ -113,7 +119,6 @@ export default async function ToolPage({ params }: ToolPageProps) {
         </div>
       </header>
 
-      {/* Content */}
       <article className="px-8 py-12">
         <div
           className="prose prose-slate dark:prose-invert mx-auto max-w-4xl"

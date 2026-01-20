@@ -1,14 +1,20 @@
 import { getAllBlogs } from '@/lib/blogs';
 import { BlogCard } from '@/components/BlogCard';
 import { Footer } from '@/components/Footer';
+import { Locale } from '@/lib/i18n';
 import { Search } from 'lucide-react';
+
+interface BlogPageProps {
+  params: Promise<{ locale: string }>;
+}
 
 /**
  * 博客列表页面
  * 显示所有博客文章
  */
-export default async function BlogPage() {
-  const blogs = await getAllBlogs();
+export default async function BlogPage({ params }: BlogPageProps) {
+  const { locale } = await params;
+  const blogs = await getAllBlogs(locale as Locale);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -44,7 +50,7 @@ export default async function BlogPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {blogs.map((post) => (
-                <BlogCard key={post.slug} post={post} />
+                <BlogCard key={post.slug} post={post} locale={locale as Locale} />
               ))}
             </div>
           )}

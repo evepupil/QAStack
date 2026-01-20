@@ -3,6 +3,8 @@ import path from 'path';
 import { remark } from 'remark';
 import html from 'remark-html';
 
+export type Locale = 'en' | 'zh';
+
 // TypeScript interfaces
 export interface Tool {
   slug: string;
@@ -22,15 +24,15 @@ export interface Category {
 }
 
 // Read tools from JSON file
-function getToolsData(): Tool[] {
-  const filePath = path.join(process.cwd(), 'data', 'tools.json');
+function getToolsData(locale: Locale): Tool[] {
+  const filePath = path.join(process.cwd(), 'data', 'tools', `${locale}.json`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(fileContents);
 }
 
 // Read markdown content
-async function getMarkdownContent(filename: string): Promise<string> {
-  const filePath = path.join(process.cwd(), 'content', 'tools', filename);
+async function getMarkdownContent(filename: string, locale: Locale): Promise<string> {
+  const filePath = path.join(process.cwd(), 'data', 'content', locale, filename);
   const fileContents = fs.readFileSync(filePath, 'utf8');
 
   // Convert markdown to HTML
@@ -42,8 +44,8 @@ async function getMarkdownContent(filename: string): Promise<string> {
 }
 
 // Fetch all tools
-export async function getAllTools(): Promise<Tool[]> {
-  const toolsData = getToolsData();
+export async function getAllTools(locale: Locale = 'en'): Promise<Tool[]> {
+  const toolsData = getToolsData(locale);
 
   return toolsData.map((tool) => ({
     slug: tool.slug,
@@ -58,14 +60,14 @@ export async function getAllTools(): Promise<Tool[]> {
 }
 
 // Fetch a single tool by slug
-export async function getToolBySlug(slug: string): Promise<Tool | null> {
-  const toolsData = getToolsData();
+export async function getToolBySlug(slug: string, locale: Locale = 'en'): Promise<Tool | null> {
+  const toolsData = getToolsData(locale);
   const tool = toolsData.find((t) => t.slug === slug);
 
   if (!tool) return null;
 
   // Load markdown content
-  const content = await getMarkdownContent(tool.content);
+  const content = await getMarkdownContent(tool.content, locale);
 
   return {
     slug: tool.slug,
@@ -80,13 +82,13 @@ export async function getToolBySlug(slug: string): Promise<Tool | null> {
 }
 
 // Filter tools by tag
-export async function getToolsByTag(tag: string): Promise<Tool[]> {
-  const allTools = await getAllTools();
+export async function getToolsByTag(tag: string, locale: Locale = 'en'): Promise<Tool[]> {
+  const allTools = await getAllTools(locale);
   return allTools.filter((tool) => tool.tags.includes(tag));
 }
 
 // Filter tools by pricing
-export async function getToolsByPricing(pricing: 'free' | 'paid' | 'freemium'): Promise<Tool[]> {
-  const allTools = await getAllTools();
+export async function getToolsByPricing(pricing: 'free' | 'paid' | 'freemium', locale: Locale = 'en'): Promise<Tool[]> {
+  const allTools = await getAllTools(locale);
   return allTools.filter((tool) => tool.pricing === pricing);
 }
