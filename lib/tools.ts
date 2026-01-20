@@ -30,7 +30,7 @@ function getToolsData(): Tool[] {
 
 // Read markdown content
 async function getMarkdownContent(filename: string): Promise<string> {
-  const filePath = path.join(process.cwd(), 'data', 'content', filename);
+  const filePath = path.join(process.cwd(), 'content', 'tools', filename);
   const fileContents = fs.readFileSync(filePath, 'utf8');
 
   // Convert markdown to HTML
