@@ -2,67 +2,594 @@
   {
     "slug": "playwright",
     "title": "Playwright",
-    "logo": "/images/tools/playwright.png",
-    "description": "Modern end-to-end testing framework by Microsoft. Supports multiple browsers with a single API.",
+    "logo": "https://testdev.tools/images/tools/playwright.svg",
     "affiliateLink": "https://playwright.dev/",
     "pricing": "free",
     "category": "web-automation",
-    "tags": ["automation", "e2e-testing", "ui-testing"],
-    "content": "playwright.md"
-  },
-  {
-    "slug": "jest",
-    "title": "Jest",
-    "logo": "/images/tools/jest.png",
-    "description": "Delightful JavaScript testing framework with a focus on simplicity. Works with React, Vue, Angular, and more.",
-    "affiliateLink": "https://jestjs.io/",
-    "pricing": "free",
-    "category": "web-automation",
-    "tags": ["unit-testing", "automation"],
-    "content": "jest.md"
+    "description": "微软推出的新一代 E2E 测试框架。速度极快，原生支持多 Tab、拦截网络请求，完美支持现代 Web 应用（SPA）。",
+    "tags": ["微软", "端到端测试", "UI自动化", "高性能"]
   },
   {
     "slug": "selenium",
     "title": "Selenium",
-    "logo": "/images/tools/selenium.png",
-    "description": "Browser automation framework for web application testing. Supports multiple programming languages and browsers.",
+    "logo": "https://testdev.tools/images/tools/selenium.ico",
     "affiliateLink": "https://www.selenium.dev/",
     "pricing": "free",
     "category": "web-automation",
-    "tags": ["automation", "ui-testing", "browser-automation"],
-    "content": "selenium.md"
+    "description": "浏览器自动化测试的鼻祖。支持多种编程语言（Java, Python, JS 等）和所有主流浏览器，是 Web 自动化测试的基础设施。",
+    "tags": ["浏览器自动化", "WebDriver", "行业标准", "老牌"]
   },
   {
     "slug": "cypress",
     "title": "Cypress",
-    "logo": "/images/tools/cypress.png",
-    "description": "Fast, easy and reliable testing for anything that runs in a browser. Modern end-to-end testing framework.",
+    "logo": "https://testdev.tools/images/tools/cypress.png",
     "affiliateLink": "https://www.cypress.io/",
     "pricing": "freemium",
     "category": "web-automation",
-    "tags": ["e2e-testing", "ui-testing", "automation"],
-    "content": "cypress.md"
+    "description": "开发者友好的前端测试工具。提供时光穿梭调试、实时重载等功能，让编写 E2E 测试像写单元测试一样简单直观。",
+    "tags": ["前端测试", "JavaScript", "开发者体验"]
+  },
+  {
+    "slug": "appium",
+    "title": "Appium",
+    "logo": "https://testdev.tools/images/tools/appium.png",
+    "affiliateLink": "https://appium.io/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "移动端自动化测试事实上的标准。支持 iOS、Android 和 Windows 应用的跨平台自动化，基于 WebDriver 协议。",
+    "tags": ["移动端测试", "跨平台", "iOS", "安卓"]
+  },
+  {
+    "slug": "airtest",
+    "title": "Airtest",
+    "logo": "https://airtest.doc.io.netease.com/images/home/logo.png",
+    "affiliateLink": "https://airtest.netease.com/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "网易出品的跨平台 UI 自动化测试框架。基于图像识别技术，特别适合游戏和复杂 UI 的自动化测试，支持真机和模拟器。",
+    "tags": ["游戏测试", "图像识别", "网易", "Python"]
+  },
+  {
+    "slug": "maestro",
+    "title": "Maestro",
+    "logo": "https://testdev.tools/images/tools/maestro.png",
+    "affiliateLink": "https://maestro.mobile.dev/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "移动端 UI 测试的新秀。基于 YAML 定义测试流程，无需编译 App 即可运行，简单易用且抗干扰性强，启动速度快。",
+    "tags": ["移动测试", "YAML", "极简", "现代化"]
+  },
+  {
+    "slug": "detox",
+    "title": "Detox",
+    "logo": "https://testdev.tools/images/tools/Detox.ico",
+    "affiliateLink": "https://wix.github.io/Detox/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "专为 React Native 设计的灰盒端到端测试框架。通过同步执行来解决测试的不稳定性（Flakiness），适合 RN 应用。",
+    "tags": ["React Native", "灰盒测试", "移动端"]
+  },
+  {
+    "slug": "apifox",
+    "title": "Apifox",
+    "logo": "https://cdn.apifox.com/logo/apifox-logo-512.png",
+    "affiliateLink": "https://apifox.com/",
+    "pricing": "freemium",
+    "category": "api-testing",
+    "description": "API 文档、调试、Mock、测试一体化协作平台。更先进的 API 设计/开发/测试工具，功能上相当于 Postman + Swagger + Mock + JMeter。",
+    "tags": ["接口测试", "一体化", "文档管理", "Mock数据"]
   },
   {
     "slug": "postman",
     "title": "Postman",
-    "logo": "/images/tools/postman.png",
-    "description": "API development and testing platform with powerful collaboration features for teams.",
+    "logo": "https://testdev.tools/images/tools/postman.png",
     "affiliateLink": "https://www.postman.com/",
     "pricing": "freemium",
     "category": "api-testing",
-    "tags": ["api-testing", "automation", "performance-testing"],
-    "content": "postman.md"
+    "description": "全球最流行的 API 开发与测试协作平台。支持接口调试、自动化测试集合、Mock Server 以及文档生成，生态丰富。",
+    "tags": ["接口调试", "协作", "自动化", "API客户端"]
+  },
+  {
+    "slug": "bruno",
+    "title": "Bruno",
+    "logo": "https://testdev.tools/images/tools/usebruno.png",
+    "affiliateLink": "https://www.usebruno.com/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "开源 API 客户端，Postman 的轻量级替代品。主打离线优先，Git 友好，集合可以直接存储在文件系统中，保护隐私。",
+    "tags": ["开源", "Git友好", "离线优先", "轻量级"]
+  },
+  {
+    "slug": "metersphere",
+    "title": "MeterSphere",
+    "logo": "https://github.com/metersphere/metersphere/raw/v3.0/metersphere-logo.png",
+    "affiliateLink": "https://metersphere.io/",
+    "pricing": "free",
+    "category": "test-management",
+    "description": "开源的一站式企业级持续测试平台。涵盖测试跟踪、接口测试、UI 测试和性能测试，完美融入 DevOps 流程。",
+    "tags": ["测试管理", "开源", "企业级", "持续测试"]
   },
   {
     "slug": "jmeter",
     "title": "Apache JMeter",
-    "logo": "/images/tools/jmeter.png",
-    "description": "Open-source load testing tool for analyzing and measuring performance of various services.",
+    "logo": "https://testdev.tools/images/tools/jmeter.png",
     "affiliateLink": "https://jmeter.apache.org/",
     "pricing": "free",
     "category": "performance-testing",
-    "tags": ["performance-testing", "load-testing"],
-    "content": "jmeter.md"
-  }
+    "description": "老牌开源压力测试工具。基于 Java，功能极其强大，支持 HTTP, FTP, JDBC, TCP 等各种协议的负载测试和性能监控。",
+    "tags": ["压力测试", "Java", "高并发", "性能监控"]
+  },
+  {
+    "slug": "k6",
+    "title": "k6",
+    "logo": "https://testdev.tools/images/tools/k6.png",
+    "affiliateLink": "https://k6.io/",
+    "pricing": "freemium",
+    "category": "performance-testing",
+    "description": "专为开发者设计的现代化负载测试工具。用 JavaScript 编写脚本，用 Go 运行。非常适合集成到 CI/CD 流水线中。",
+    "tags": ["负载测试", "开发者优先", "Go语言", "CI/CD"]
+  },
+  {
+    "slug": "charles-proxy",
+    "title": "Charles Proxy",
+    "logo": "https://testdev.tools/images/tools/charlesproxy.png",
+    "affiliateLink": "https://www.charlesproxy.com/",
+    "pricing": "paid",
+    "category": "network-proxy",
+    "description": "功能强大的 HTTP 代理/抓包/监视器。开发人员和测试人员必备的调试工具，支持 SSL 代理、弱网模拟和请求断点。",
+    "tags": ["抓包工具", "网络调试", "弱网模拟", "代理"]
+  },
+  {
+    "slug": "fiddler",
+    "title": "Fiddler Everywhere",
+    "logo": "https://testdev.tools/images/tools/fiddler.png",
+    "affiliateLink": "https://www.telerik.com/fiddler",
+    "pricing": "freemium",
+    "category": "network-proxy",
+    "description": "跨平台的 Web 调试代理工具。支持 macOS, Windows 和 Linux。轻松编辑和调试网络流量，深受 .NET 开发者喜爱。",
+    "tags": ["抓包", "调试", "Windows", "跨平台"]
+  },
+  {
+    "slug": "burp-suite",
+    "title": "Burp Suite",
+    "logo": "https://testdev.tools/images/tools/burp-suite-logger.png",
+    "affiliateLink": "https://portswigger.net/burp",
+    "pricing": "freemium",
+    "category": "security-testing",
+    "description": "Web 安全测试领域的瑞士军刀。包含拦截代理、爬虫、漏洞扫描器等多种工具，渗透测试人员必备神器。",
+    "tags": ["安全测试", "渗透测试", "漏洞扫描"]
+  },
+  {
+    "slug": "testcontainers",
+    "title": "Testcontainers",
+    "logo": "https://testdev.tools/images/tools/testcontainers.svg",
+    "affiliateLink": "https://testcontainers.com/",
+    "pricing": "free",
+    "category": "cicd-devops",
+    "description": "一个支持 Java/Go/Node 的库，能够提供轻量级、一次性的 Docker 容器实例（如数据库、Selenium 浏览器），用于集成测试。",
+    "tags": ["Docker", "集成测试", "环境隔离", "Java"]
+  },
+  {
+    "slug": "mockaroo",
+    "title": "Mockaroo",
+    "logo": "https://testdev.tools/images/tools/mockaroo.png",
+    "affiliateLink": "https://www.mockaroo.com/",
+    "pricing": "freemium",
+    "category": "mock-data",
+    "description": "优秀的在线测试数据生成器。可以生成 CSV, JSON, SQL, Excel 等格式的逼真测试数据，支持自定义字段逻辑。",
+    "tags": ["数据生成", "造数", "SQL", "JSON"]
+  },
+  {
+    "slug": "axe-core",
+    "title": "axe-core",
+    "logo": "https://testdev.tools/images/tools/axe-core.jpg",
+    "affiliateLink": "https://www.deque.com/axe/",
+    "pricing": "free",
+    "category": "accessibility",
+    "description": "全球领先的 Web 无障碍测试引擎。可以嵌入到 Chrome 扩展、Selenium 或其他测试框架中自动检测 A11y 问题。",
+    "tags": ["无障碍测试", "A11y", "自动化审计"]
+  },
+
+  {
+    "slug": "jenkins",
+    "title": "Jenkins",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png",
+    "affiliateLink": "https://www.jenkins.io/",
+    "pricing": "free",
+    "category": "cicd-devops",
+    "description": "最流行的开源自动化服务器。拥有丰富的插件生态系统，支持构建、部署和自动化任何项目，是 CI/CD 的基石。",
+    "tags": ["CI/CD", "自动化", "DevOps", "构建工具"]
+  },
+  {
+    "slug": "gitlab-ci",
+    "title": "GitLab CI",
+    "logo": "https://testdev.tools/images/tools/gitlab.png",
+    "affiliateLink": "https://docs.gitlab.com/ee/ci/",
+    "pricing": "freemium",
+    "category": "cicd-devops",
+    "description": "GitLab 内置的持续集成工具。配置简单（.gitlab-ci.yml），与代码仓库无缝集成，是目前最受开发者欢迎的 CI 工具之一。",
+    "tags": ["CI/CD", "GitLab", "DevOps", "流水线"]
+  },
+  {
+    "slug": "sonarqube",
+    "title": "SonarQube",
+    "logo": "https://testdev.tools/images/tools/sonarqube.png",
+    "affiliateLink": "https://www.sonarqube.org/",
+    "pricing": "freemium",
+    "category": "code-analysis",
+    "description": "领先的自动代码审查工具。可以检测代码中的 Bug、漏洞和怪异代码（Code Smell），支持 20 多种编程语言。",
+    "tags": ["代码质量", "静态分析", "安全审计", "Java"]
+  },
+  {
+    "slug": "wireshark",
+    "title": "Wireshark",
+    "logo": "https://testdev.tools/images/tools/wireshark.png",
+    "affiliateLink": "https://www.wireshark.org/",
+    "pricing": "free",
+    "category": "network-proxy",
+    "description": "世界上最重要的网络协议分析器。可以深入微观层面查看网络发生了什么，是网络故障排除和通信协议分析的标准工具。",
+    "tags": ["抓包", "协议分析", "网络取证", "TCP/IP"]
+  },
+  {
+    "slug": "owasp-zap",
+    "title": "OWASP ZAP",
+    "logo": "https://testdev.tools/images/tools/zap.png",
+    "affiliateLink": "https://www.zaproxy.org/",
+    "pricing": "free",
+    "category": "security-testing",
+    "description": "世界上最受欢迎的免费安全扫描工具。由 OWASP 维护，适合在开发过程中自动查找 Web 应用程序中的安全漏洞。",
+    "tags": ["安全扫描", "漏洞检测", "开源", "OWASP"]
+  },
+  {
+    "slug": "sqlmap",
+    "title": "sqlmap",
+    "logo": "https://testdev.tools/images/tools/sqlmap.ico",
+    "affiliateLink": "https://sqlmap.org/",
+    "pricing": "free",
+    "category": "security-testing",
+    "description": "自动化的 SQL 注入和数据库接管工具。功能极其强大，支持多种数据库指纹识别和漏洞利用，红队必备。",
+    "tags": ["SQL注入", "渗透测试", "数据库安全", "黑客工具"]
+  },
+  {
+    "slug": "metasploit",
+    "title": "Metasploit",
+    "logo": "https://testdev.tools/images/tools/metasploit.ico",
+    "affiliateLink": "https://www.metasploit.com/",
+    "pricing": "freemium",
+    "category": "security-testing",
+    "description": "世界上使用最广泛的渗透测试框架。用于验证漏洞的可利用性，包含庞大的 Exploit 数据库。",
+    "tags": ["渗透测试", "漏洞利用", "红队", "Ruby"]
+  },
+  {
+    "slug": "junit",
+    "title": "JUnit 5",
+    "logo": "https://testdev.tools/images/tools/junit5.png",
+    "affiliateLink": "https://junit.org/junit5/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "Java 程序员最熟悉的单元测试框架。JUnit 5 是下一代版本，模块化设计，支持参数化测试和动态测试。",
+    "tags": ["单元测试", "Java", "测试框架", "TDD"]
+  },
+  {
+    "slug": "pytest",
+    "title": "Pytest",
+    "logo": "https://testdev.tools/images/tools/pytest.svg",
+    "affiliateLink": "https://docs.pytest.org/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "Python 生态中最强大的测试框架。语法简单，插件丰富（如 pytest-selenium, pytest-xdist），不仅用于单元测试，也广泛用于接口和 UI 自动化。",
+    "tags": ["Python", "单元测试", "自动化框架", "插件丰富"]
+  },
+  {
+    "slug": "testng",
+    "title": "TestNG",
+    "logo": "https://testdev.tools/images/tools/test-ng.png",
+    "affiliateLink": "https://testng.org/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "受 JUnit 和 NUnit 启发的 Java 测试框架，但功能更强大。支持依赖测试、并行测试和数据驱动，非常适合集成测试。",
+    "tags": ["Java", "测试框架", "数据驱动", "并行测试"]
+  },
+  {
+    "slug": "mocha",
+    "title": "Mocha",
+    "logo": "https://testdev.tools/images/tools/mochawesome.png",
+    "affiliateLink": "https://mochajs.org/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "功能丰富的 JavaScript 测试框架，运行在 Node.js 和浏览器中。通常配合 Chai 断言库使用，灵活度极高。",
+    "tags": ["JavaScript", "Node.js", "测试框架", "异步测试"]
+  },
+  {
+    "slug": "regex101",
+    "title": "Regex101",
+    "logo": "https://testdev.tools/images/tools/regex101.png",
+    "affiliateLink": "https://regex101.com/",
+    "pricing": "free",
+    "category": "devtools",
+    "description": "最好的在线正则表达式调试工具。支持 PCRE, Python, Go 等多种正则流派，提供实时解释和匹配高亮。",
+    "tags": ["正则", "开发工具", "在线调试", "辅助工具"]
+  },
+  {
+    "slug": "jsonpath-finder",
+    "title": "JSONPath Finder",
+    "logo": "https://testdev.tools/images/tools/jsonpath.png",
+    "affiliateLink": "https://jsonpathfinder.com/",
+    "pricing": "free",
+    "category": "devtools",
+    "description": "API 测试必备辅助工具。粘贴 JSON，点击节点，立刻获取对应的 JSONPath 表达式，做断言时非常有用。",
+    "tags": ["JSON", "JSONPath", "辅助工具", "API测试"]
+  },
+  {
+    "slug": "lighthouse",
+    "title": "Google Lighthouse",
+    "logo": "https://testdev.tools/images/tools/lighthouse.svg",
+    "affiliateLink": "https://developers.google.com/web/tools/lighthouse",
+    "pricing": "free",
+    "category": "performance-testing",
+    "description": "Google 开源的自动化审计工具。用于提升网页的性能、质量和 SEO，是前端性能优化的黄金标准。",
+    "tags": ["性能优化", "SEO", "Google", "前端"]
+  },
+  {
+    "slug": "browserstack",
+    "title": "BrowserStack",
+    "logo": "https://testdev.tools/images/tools/browserstack.png",
+    "affiliateLink": "https://www.browserstack.com/",
+    "pricing": "paid",
+    "category": "cloud-testing",
+    "description": "全球最大的云测平台。提供 3000+ 种真实设备和浏览器环境，支持手动测试和自动化测试，解决兼容性测试难题。",
+    "tags": ["云测平台", "兼容性测试", "真机调试", "SaaS"]
+  },
+  {
+    "slug": "saucelabs",
+    "title": "Sauce Labs",
+    "logo": "https://testdev.tools/images/tools/saucelabs.png",
+    "affiliateLink": "https://saucelabs.com/",
+    "pricing": "paid",
+    "category": "cloud-testing",
+    "description": "老牌的云测试平台，Selenium 的重要贡献者。提供极其稳定的自动化测试云环境，深受企业级客户信赖。",
+    "tags": ["云测", "Selenium", "自动化基础设施", "企业级"]
+  },
+  {
+    "slug": "visual-studio-code",
+    "title": "Visual Studio Code",
+    "logo": "https://testdev.tools/images/tools/vs-code.png",
+    "affiliateLink": "https://code.visualstudio.com/",
+    "pricing": "free",
+    "category": "ide",
+    "description": "目前统治宇宙的代码编辑器。插件生态极其丰富，Playwright, Cypress, Postman 等都有官方插件，测试开发首选。",
+    "tags": ["编辑器", "微软", "插件", "开发环境"]
+  },
+  {
+    "slug": "intellij-idea",
+    "title": "IntelliJ IDEA",
+    "logo": "https://testdev.tools/images/tools/intellijidea.png",
+    "affiliateLink": "https://www.jetbrains.com/idea/",
+    "pricing": "freemium",
+    "category": "ide",
+    "description": "Java 开发者的终极神器。智能代码提示无出其右，对 JUnit, TestNG, Selenium 的支持非常完美。",
+    "tags": ["IDE", "Java", "JetBrains", "效率工具"]
+  },
+  {
+    "slug": "dbeaver",
+    "title": "DBeaver",
+    "logo": "https://dbeaver.io/images/dbeaver-head.png",
+    "affiliateLink": "https://dbeaver.io/",
+    "pricing": "free",
+    "category": "database",
+    "description": "通用的数据库管理工具。支持 MySQL, PostgreSQL, Oracle, SQLite 等几乎所有数据库，测试人员查数必备。",
+    "tags": ["数据库", "SQL", "客户端", "开源"]
+  },
+  {
+    "slug": "docker",
+    "title": "Docker",
+    "logo": "https://testdev.tools/images/tools/docker.png",
+    "affiliateLink": "https://www.docker.com/",
+    "pricing": "freemium",
+    "category": "cicd-devops",
+    "description": "容器化技术的标准。用于快速搭建测试环境（如 Selenium Grid, 数据库），保证开发、测试、生产环境的一致性。",
+    "tags": ["容器", "环境搭建", "DevOps", "虚拟化"]
+  },
+  
+    {
+      "slug": "jenkins",
+      "title": "Jenkins",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png",
+      "affiliateLink": "https://www.jenkins.io/",
+      "pricing": "free",
+      "category": "cicd-devops",
+      "description": "最流行的开源自动化服务器。拥有丰富的插件生态系统，支持构建、部署和自动化任何项目，是 CI/CD 的基石。",
+      "tags": ["CI/CD", "自动化", "DevOps", "构建工具"]
+    },
+    {
+      "slug": "gitlab-ci",
+      "title": "GitLab CI",
+      "logo": "https://testdev.tools/images/tools/gitlab.png",
+      "affiliateLink": "https://docs.gitlab.com/ee/ci/",
+      "pricing": "freemium",
+      "category": "cicd-devops",
+      "description": "GitLab 内置的持续集成工具。配置简单（.gitlab-ci.yml），与代码仓库无缝集成，是目前最受开发者欢迎的 CI 工具之一。",
+      "tags": ["CI/CD", "GitLab", "DevOps", "流水线"]
+    },
+    {
+      "slug": "sonarqube",
+      "title": "SonarQube",
+      "logo": "https://testdev.tools/images/tools/sonarqube.png",
+      "affiliateLink": "https://www.sonarqube.org/",
+      "pricing": "freemium",
+      "category": "code-analysis",
+      "description": "领先的自动代码审查工具。可以检测代码中的 Bug、漏洞和怪异代码（Code Smell），支持 20 多种编程语言。",
+      "tags": ["代码质量", "静态分析", "安全审计", "Java"]
+    },
+    {
+      "slug": "wireshark",
+      "title": "Wireshark",
+      "logo": "https://testdev.tools/images/tools/wireshark.png",
+      "affiliateLink": "https://www.wireshark.org/",
+      "pricing": "free",
+      "category": "network-proxy",
+      "description": "世界上最重要的网络协议分析器。可以深入微观层面查看网络发生了什么，是网络故障排除和通信协议分析的标准工具。",
+      "tags": ["抓包", "协议分析", "网络取证", "TCP/IP"]
+    },
+    {
+      "slug": "owasp-zap",
+      "title": "OWASP ZAP",
+      "logo": "https://testdev.tools/images/tools/zap.png",
+      "affiliateLink": "https://www.zaproxy.org/",
+      "pricing": "free",
+      "category": "security-testing",
+      "description": "世界上最受欢迎的免费安全扫描工具。由 OWASP 维护，适合在开发过程中自动查找 Web 应用程序中的安全漏洞。",
+      "tags": ["安全扫描", "漏洞检测", "开源", "OWASP"]
+    },
+    {
+      "slug": "sqlmap",
+      "title": "sqlmap",
+      "logo": "https://testdev.tools/images/tools/sqlmap.ico",
+      "affiliateLink": "https://sqlmap.org/",
+      "pricing": "free",
+      "category": "security-testing",
+      "description": "自动化的 SQL 注入和数据库接管工具。功能极其强大，支持多种数据库指纹识别和漏洞利用，红队必备。",
+      "tags": ["SQL注入", "渗透测试", "数据库安全", "黑客工具"]
+    },
+    {
+      "slug": "metasploit",
+      "title": "Metasploit",
+      "logo": "https://testdev.tools/images/tools/metasploit.ico",
+      "affiliateLink": "https://www.metasploit.com/",
+      "pricing": "freemium",
+      "category": "security-testing",
+      "description": "世界上使用最广泛的渗透测试框架。用于验证漏洞的可利用性，包含庞大的 Exploit 数据库。",
+      "tags": ["渗透测试", "漏洞利用", "红队", "Ruby"]
+    },
+    {
+      "slug": "junit",
+      "title": "JUnit 5",
+      "logo": "https://testdev.tools/images/tools/junit5.png",
+      "affiliateLink": "https://junit.org/junit5/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "Java 程序员最熟悉的单元测试框架。JUnit 5 是下一代版本，模块化设计，支持参数化测试和动态测试。",
+      "tags": ["单元测试", "Java", "测试框架", "TDD"]
+    },
+    {
+      "slug": "pytest",
+      "title": "Pytest",
+      "logo": "https://testdev.tools/images/tools/pytest.svg",
+      "affiliateLink": "https://docs.pytest.org/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "Python 生态中最强大的测试框架。语法简单，插件丰富（如 pytest-selenium, pytest-xdist），不仅用于单元测试，也广泛用于接口和 UI 自动化。",
+      "tags": ["Python", "单元测试", "自动化框架", "插件丰富"]
+    },
+    {
+      "slug": "testng",
+      "title": "TestNG",
+      "logo": "https://testdev.tools/images/tools/test-ng.png",
+      "affiliateLink": "https://testng.org/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "受 JUnit 和 NUnit 启发的 Java 测试框架，但功能更强大。支持依赖测试、并行测试和数据驱动，非常适合集成测试。",
+      "tags": ["Java", "测试框架", "数据驱动", "并行测试"]
+    },
+    {
+      "slug": "mocha",
+      "title": "Mocha",
+      "logo": "https://testdev.tools/images/tools/mochawesome.png",
+      "affiliateLink": "https://mochajs.org/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "功能丰富的 JavaScript 测试框架，运行在 Node.js 和浏览器中。通常配合 Chai 断言库使用，灵活度极高。",
+      "tags": ["JavaScript", "Node.js", "测试框架", "异步测试"]
+    },
+    {
+      "slug": "regex101",
+      "title": "Regex101",
+      "logo": "https://testdev.tools/images/tools/regex101.png",
+      "affiliateLink": "https://regex101.com/",
+      "pricing": "free",
+      "category": "devtools",
+      "description": "最好的在线正则表达式调试工具。支持 PCRE, Python, Go 等多种正则流派，提供实时解释和匹配高亮。",
+      "tags": ["正则", "开发工具", "在线调试", "辅助工具"]
+    },
+    {
+      "slug": "jsonpath-finder",
+      "title": "JSONPath Finder",
+      "logo": "https://testdev.tools/images/tools/jsonpath.png",
+      "affiliateLink": "https://jsonpathfinder.com/",
+      "pricing": "free",
+      "category": "devtools",
+      "description": "API 测试必备辅助工具。粘贴 JSON，点击节点，立刻获取对应的 JSONPath 表达式，做断言时非常有用。",
+      "tags": ["JSON", "JSONPath", "辅助工具", "API测试"]
+    },
+    {
+      "slug": "lighthouse",
+      "title": "Google Lighthouse",
+      "logo": "https://testdev.tools/images/tools/lighthouse.svg",
+      "affiliateLink": "https://developers.google.com/web/tools/lighthouse",
+      "pricing": "free",
+      "category": "performance-testing",
+      "description": "Google 开源的自动化审计工具。用于提升网页的性能、质量和 SEO，是前端性能优化的黄金标准。",
+      "tags": ["性能优化", "SEO", "Google", "前端"]
+    },
+    {
+      "slug": "browserstack",
+      "title": "BrowserStack",
+      "logo": "https://testdev.tools/images/tools/browserstack.png",
+      "affiliateLink": "https://www.browserstack.com/",
+      "pricing": "paid",
+      "category": "cloud-testing",
+      "description": "全球最大的云测平台。提供 3000+ 种真实设备和浏览器环境，支持手动测试和自动化测试，解决兼容性测试难题。",
+      "tags": ["云测平台", "兼容性测试", "真机调试", "SaaS"]
+    },
+    {
+      "slug": "saucelabs",
+      "title": "Sauce Labs",
+      "logo": "https://testdev.tools/images/tools/saucelabs.png",
+      "affiliateLink": "https://saucelabs.com/",
+      "pricing": "paid",
+      "category": "cloud-testing",
+      "description": "老牌的云测试平台，Selenium 的重要贡献者。提供极其稳定的自动化测试云环境，深受企业级客户信赖。",
+      "tags": ["云测", "Selenium", "自动化基础设施", "企业级"]
+    },
+    {
+      "slug": "visual-studio-code",
+      "title": "Visual Studio Code",
+      "logo": "https://testdev.tools/images/tools/vs-code.png",
+      "affiliateLink": "https://code.visualstudio.com/",
+      "pricing": "free",
+      "category": "ide",
+      "description": "目前统治宇宙的代码编辑器。插件生态极其丰富，Playwright, Cypress, Postman 等都有官方插件，测试开发首选。",
+      "tags": ["编辑器", "微软", "插件", "开发环境"]
+    },
+    {
+      "slug": "intellij-idea",
+      "title": "IntelliJ IDEA",
+      "logo": "https://testdev.tools/images/tools/intellijidea.png",
+      "affiliateLink": "https://www.jetbrains.com/idea/",
+      "pricing": "freemium",
+      "category": "ide",
+      "description": "Java 开发者的终极神器。智能代码提示无出其右，对 JUnit, TestNG, Selenium 的支持非常完美。",
+      "tags": ["IDE", "Java", "JetBrains", "效率工具"]
+    },
+    {
+      "slug": "dbeaver",
+      "title": "DBeaver",
+      "logo": "https://dbeaver.io/images/dbeaver-head.png",
+      "affiliateLink": "https://dbeaver.io/",
+      "pricing": "free",
+      "category": "database",
+      "description": "通用的数据库管理工具。支持 MySQL, PostgreSQL, Oracle, SQLite 等几乎所有数据库，测试人员查数必备。",
+      "tags": ["数据库", "SQL", "客户端", "开源"]
+    },
+    {
+      "slug": "docker",
+      "title": "Docker",
+      "logo": "https://testdev.tools/images/tools/docker.png",
+      "affiliateLink": "https://www.docker.com/",
+      "pricing": "freemium",
+      "category": "cicd-devops",
+      "description": "容器化技术的标准。用于快速搭建测试环境（如 Selenium Grid, 数据库），保证开发、测试、生产环境的一致性。",
+      "tags": ["容器", "环境搭建", "DevOps", "虚拟化"]
+    }
+  
 ]

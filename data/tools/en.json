@@ -2,67 +2,393 @@
   {
     "slug": "playwright",
     "title": "Playwright",
-    "logo": "/images/tools/playwright.png",
-    "description": "Modern end-to-end testing framework by Microsoft. Supports multiple browsers with a single API.",
+    "logo": "https://testdev.tools/images/tools/playwright.svg",
     "affiliateLink": "https://playwright.dev/",
     "pricing": "free",
     "category": "web-automation",
-    "tags": ["automation", "e2e-testing", "ui-testing"],
-    "content": "playwright.md"
-  },
-  {
-    "slug": "jest",
-    "title": "Jest",
-    "logo": "/images/tools/jest.png",
-    "description": "Delightful JavaScript testing framework with a focus on simplicity. Works with React, Vue, Angular, and more.",
-    "affiliateLink": "https://jestjs.io/",
-    "pricing": "free",
-    "category": "web-automation",
-    "tags": ["unit-testing", "automation"],
-    "content": "jest.md"
+    "description": "Microsoft's modern end-to-end testing framework. Extremely fast, supports multiple tabs, intercepts network requests, and works perfectly with modern SPAs.",
+    "tags": ["microsoft", "e2e-testing", "fast", "reliable"]
   },
   {
     "slug": "selenium",
     "title": "Selenium",
-    "logo": "/images/tools/selenium.png",
-    "description": "Browser automation framework for web application testing. Supports multiple programming languages and browsers.",
+    "logo": "https://testdev.tools/images/tools/selenium.ico",
     "affiliateLink": "https://www.selenium.dev/",
     "pricing": "free",
     "category": "web-automation",
-    "tags": ["automation", "ui-testing", "browser-automation"],
-    "content": "selenium.md"
+    "description": "The grandfather of browser automation. Supports multiple programming languages (Java, Python, JS, etc.) and all major browsers. The infrastructure of web testing.",
+    "tags": ["browser-automation", "webdriver", "industry-standard"]
   },
   {
     "slug": "cypress",
     "title": "Cypress",
-    "logo": "/images/tools/cypress.png",
-    "description": "Fast, easy and reliable testing for anything that runs in a browser. Modern end-to-end testing framework.",
+    "logo": "https://testdev.tools/images/tools/cypress.png",
     "affiliateLink": "https://www.cypress.io/",
     "pricing": "freemium",
     "category": "web-automation",
-    "tags": ["e2e-testing", "ui-testing", "automation"],
-    "content": "cypress.md"
+    "description": "Developer-friendly front-end testing tool. Features time-travel debugging and real-time reloading. Makes E2E testing as easy as unit testing.",
+    "tags": ["frontend", "javascript", "developer-experience"]
+  },
+  {
+    "slug": "appium",
+    "title": "Appium",
+    "logo": "https://testdev.tools/images/tools/appium.png",
+    "affiliateLink": "https://appium.io/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "The de facto standard for mobile automation. Supports cross-platform automation for iOS, Android, and Windows apps based on the WebDriver protocol.",
+    "tags": ["mobile", "automation", "cross-platform", "ios", "android"]
+  },
+  {
+    "slug": "airtest",
+    "title": "Airtest",
+    "logo": "https://airtest.doc.io.netease.com/images/home/logo.png",
+    "affiliateLink": "https://airtest.netease.com/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "A cross-platform UI automation framework for games and apps from NetEase. Uses image recognition technology, making it ideal for game testing.",
+    "tags": ["game-testing", "image-recognition", "netease", "python"]
+  },
+  {
+    "slug": "maestro",
+    "title": "Maestro",
+    "logo": "https://testdev.tools/images/tools/maestro.png",
+    "affiliateLink": "https://maestro.mobile.dev/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "The simplest and most effective mobile UI testing framework. Define flows in YAML, run without compiling the app. High stability and easy to set up.",
+    "tags": ["mobile", "yaml", "modern", "dx"]
+  },
+  {
+    "slug": "detox",
+    "title": "Detox",
+    "logo": "https://testdev.tools/images/tools/Detox.ico",
+    "affiliateLink": "https://wix.github.io/Detox/",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "Gray box end-to-end testing and automation framework for React Native mobile apps. Reduces flakiness by synchronizing with the app.",
+    "tags": ["react-native", "gray-box", "mobile"]
+  },
+  {
+    "slug": "apifox",
+    "title": "Apifox",
+    "logo": "https://cdn.apifox.com/logo/apifox-logo-512.png",
+    "affiliateLink": "https://apifox.com/",
+    "pricing": "freemium",
+    "category": "api-testing",
+    "description": "All-in-one API collaboration platform. Integrates API documentation, debugging, Mocking, and automated testing. A superior alternative to Postman + Swagger.",
+    "tags": ["api-collaboration", "all-in-one", "documentation", "mock"]
   },
   {
     "slug": "postman",
     "title": "Postman",
-    "logo": "/images/tools/postman.png",
-    "description": "API development and testing platform with powerful collaboration features for teams.",
+    "logo": "https://testdev.tools/images/tools/postman.png",
     "affiliateLink": "https://www.postman.com/",
     "pricing": "freemium",
     "category": "api-testing",
-    "tags": ["api-testing", "automation", "performance-testing"],
-    "content": "postman.md"
+    "description": "The world's most popular API development platform. Powerful features for API debugging, automated collections, mock servers, and collaboration.",
+    "tags": ["api-client", "collaboration", "mock"]
+  },
+  {
+    "slug": "bruno",
+    "title": "Bruno",
+    "logo": "https://testdev.tools/images/tools/usebruno.png",
+    "affiliateLink": "https://www.usebruno.com/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "Open-source API client, a lightweight alternative to Postman. Offline-first, git-friendly, and stores collections directly in your filesystem.",
+    "tags": ["opensource", "git-friendly", "local-first"]
+  },
+  {
+    "slug": "metersphere",
+    "title": "MeterSphere",
+    "logo": "https://github.com/metersphere/metersphere/raw/v3.0/metersphere-logo.png",
+    "affiliateLink": "https://metersphere.io/",
+    "pricing": "free",
+    "category": "test-management",
+    "description": "An open-source enterprise-class continuous testing platform. Covers test tracking, API testing, UI testing, and performance testing in one unified system.",
+    "tags": ["test-management", "open-source", "enterprise", "cicd"]
   },
   {
     "slug": "jmeter",
     "title": "Apache JMeter",
-    "logo": "/images/tools/jmeter.png",
-    "description": "Open-source load testing tool for analyzing and measuring performance of various services.",
+    "logo": "https://testdev.tools/images/tools/jmeter.png",
     "affiliateLink": "https://jmeter.apache.org/",
     "pricing": "free",
     "category": "performance-testing",
-    "tags": ["performance-testing", "load-testing"],
-    "content": "jmeter.md"
-  }
-]
+    "description": "The classic open-source load testing tool. Java-based, extremely powerful, supports various protocols (HTTP, JDBC, etc.) for performance measurement.",
+    "tags": ["load-testing", "java", "enterprise", "high-concurrency"]
+  },
+  {
+    "slug": "k6",
+    "title": "k6",
+    "logo": "https://testdev.tools/images/tools/k6.png",
+    "affiliateLink": "https://k6.io/",
+    "pricing": "freemium",
+    "category": "performance-testing",
+    "description": "A modern load testing tool built for developers. Write tests in JavaScript, run them in Go. Perfect for integrating performance checks into CI/CD pipelines.",
+    "tags": ["load-testing", "developer-centric", "go", "ci-cd"]
+  },
+  {
+    "slug": "charles-proxy",
+    "title": "Charles Proxy",
+    "logo": "https://testdev.tools/images/tools/charlesproxy.png",
+    "affiliateLink": "https://www.charlesproxy.com/",
+    "pricing": "paid",
+    "category": "network-proxy",
+    "description": "A web proxy (HTTP Proxy / HTTP Monitor) that runs on your own computer. Essential for debugging network requests, throttling, and SSL sniffing.",
+    "tags": ["debugging", "proxy", "sniffer", "network"]
+  },
+  {
+    "slug": "fiddler",
+    "title": "Fiddler Everywhere",
+    "logo": "https://testdev.tools/images/tools/fiddler.png",
+    "affiliateLink": "https://www.telerik.com/fiddler",
+    "pricing": "freemium",
+    "category": "network-proxy",
+    "description": "The robust web debugging proxy for any browser, system or platform. Edit and debug network traffic with ease.",
+    "tags": ["proxy", "debugging", "windows", "cross-platform"]
+  },
+  {
+    "slug": "burp-suite",
+    "title": "Burp Suite",
+    "logo": "https://testdev.tools/images/tools/burp-suite-logger.png",
+    "affiliateLink": "https://portswigger.net/burp",
+    "pricing": "freemium",
+    "category": "security-testing",
+    "description": "The swiss army knife for web security testing. Contains an interception proxy, spider, vulnerability scanner, and more. A must-have for pentesters.",
+    "tags": ["security", "pentest", "scanner"]
+  },
+  {
+    "slug": "testcontainers",
+    "title": "Testcontainers",
+    "logo": "https://testdev.tools/images/tools/testcontainers.svg",
+    "affiliateLink": "https://testcontainers.com/",
+    "pricing": "free",
+    "category": "cicd-devops",
+    "description": "A library to support JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.",
+    "tags": ["docker", "integration-testing", "java", "go"]
+  },
+  {
+    "slug": "mockaroo",
+    "title": "Mockaroo",
+    "logo": "https://testdev.tools/images/tools/mockaroo.png",
+    "affiliateLink": "https://www.mockaroo.com/",
+    "pricing": "freemium",
+    "category": "mock-data",
+    "description": "A realistic data generator. Let's you generate up to 1,000 rows of realistic test data in CSV, JSON, SQL, and Excel formats for free.",
+    "tags": ["data-generation", "sql", "json", "test-data"]
+  },
+  {
+    "slug": "axe-core",
+    "title": "axe-core",
+    "logo": "https://testdev.tools/images/tools/axe-core.jpg",
+    "affiliateLink": "https://www.deque.com/axe/",
+    "pricing": "free",
+    "category": "accessibility",
+    "description": "The world's leading accessibility testing engine. Automated accessibility testing for your Android, iOS, and Web applications.",
+    "tags": ["a11y", "wcag", "audit", "automation"]
+  },
+
+  
+    {
+      "slug": "jenkins",
+      "title": "Jenkins",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png",
+      "affiliateLink": "https://www.jenkins.io/",
+      "pricing": "free",
+      "category": "cicd-devops",
+      "description": "The leading open source automation server. With hundreds of plugins, it supports building, deploying and automating any project.",
+      "tags": ["ci-cd", "automation", "server", "devops"]
+    },
+    {
+      "slug": "gitlab-ci",
+      "title": "GitLab CI",
+      "logo": "https://testdev.tools/images/tools/gitlab.png",
+      "affiliateLink": "https://docs.gitlab.com/ee/ci/",
+      "pricing": "freemium",
+      "category": "cicd-devops",
+      "description": "Built-in Continuous Integration for GitLab. Defined by .gitlab-ci.yml, it is seamlessly integrated with your repository and highly popular.",
+      "tags": ["ci-cd", "gitlab", "devops", "pipeline"]
+    },
+    {
+      "slug": "sonarqube",
+      "title": "SonarQube",
+      "logo": "https://testdev.tools/images/tools/sonarqube.png",
+      "affiliateLink": "https://www.sonarqube.org/",
+      "pricing": "freemium",
+      "category": "code-analysis",
+      "description": "The leading tool for automatic code review. Detects bugs, vulnerabilities, and code smells across 20+ programming languages.",
+      "tags": ["code-quality", "static-analysis", "security", "java"]
+    },
+    {
+      "slug": "wireshark",
+      "title": "Wireshark",
+      "logo": "https://testdev.tools/images/tools/wireshark.png",
+      "affiliateLink": "https://www.wireshark.org/",
+      "pricing": "free",
+      "category": "network-proxy",
+      "description": "The world's foremost network protocol analyzer. It lets you see what's happening on your network at a microscopic level.",
+      "tags": ["packet-analyzer", "network", "forensics", "tcp-ip"]
+    },
+    {
+      "slug": "owasp-zap",
+      "title": "OWASP ZAP",
+      "logo": "https://testdev.tools/images/tools/zap.png",
+      "affiliateLink": "https://www.zaproxy.org/",
+      "pricing": "free",
+      "category": "security-testing",
+      "description": "The world's most popular free security scanner. Maintained by OWASP, ideal for finding security vulnerabilities in web apps during development.",
+      "tags": ["security", "scanner", "opensource", "owasp"]
+    },
+    {
+      "slug": "sqlmap",
+      "title": "sqlmap",
+      "logo": "https://testdev.tools/images/tools/sqlmap.ico",
+      "affiliateLink": "https://sqlmap.org/",
+      "pricing": "free",
+      "category": "security-testing",
+      "description": "Automatic SQL injection and database takeover tool. Extremely powerful, supports database fingerprinting and exploitation.",
+      "tags": ["sql-injection", "penetration-testing", "database", "hacking"]
+    },
+    {
+      "slug": "metasploit",
+      "title": "Metasploit",
+      "logo": "https://testdev.tools/images/tools/metasploit.ico",
+      "affiliateLink": "https://www.metasploit.com/",
+      "pricing": "freemium",
+      "category": "security-testing",
+      "description": "The world's most used penetration testing framework. Verify vulnerabilities and manage security assessments with a massive exploit database.",
+      "tags": ["pentest", "exploit", "red-team", "ruby"]
+    },
+    {
+      "slug": "junit",
+      "title": "JUnit 5",
+      "logo": "https://testdev.tools/images/tools/junit5.png",
+      "affiliateLink": "https://junit.org/junit5/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "The standard unit testing framework for Java. JUnit 5 is the next generation, offering modularity, parameterized tests, and dynamic tests.",
+      "tags": ["unit-testing", "java", "framework", "tdd"]
+    },
+    {
+      "slug": "pytest",
+      "title": "Pytest",
+      "logo": "https://testdev.tools/images/tools/pytest.svg",
+      "affiliateLink": "https://docs.pytest.org/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "The most powerful testing framework in the Python ecosystem. Simple syntax, massive plugin ecosystem, used for unit, API, and UI testing.",
+      "tags": ["python", "unit-testing", "automation", "plugins"]
+    },
+    {
+      "slug": "testng",
+      "title": "TestNG",
+      "logo": "https://testdev.tools/images/tools/test-ng.png",
+      "affiliateLink": "https://testng.org/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "A testing framework inspired by JUnit and NUnit, but introducing new functionalities like dependency testing, parallel execution, and data providers.",
+      "tags": ["java", "framework", "data-driven", "parallel"]
+    },
+    {
+      "slug": "mocha",
+      "title": "Mocha",
+      "logo": "https://testdev.tools/images/tools/mochawesome.png",
+      "affiliateLink": "https://mochajs.org/",
+      "pricing": "free",
+      "category": "unit-testing",
+      "description": "A feature-rich JavaScript test framework running on Node.js and in the browser. Highly flexible, often used with Chai assertions.",
+      "tags": ["javascript", "nodejs", "framework", "async"]
+    },
+    {
+      "slug": "regex101",
+      "title": "Regex101",
+      "logo": "https://testdev.tools/images/tools/regex101.png",
+      "affiliateLink": "https://regex101.com/",
+      "pricing": "free",
+      "category": "devtools",
+      "description": "The best online regular expression debugger. Supports PCRE, Python, Go, and more, providing real-time explanation and match highlighting.",
+      "tags": ["regex", "devtools", "debugger", "utility"]
+    },
+    {
+      "slug": "jsonpath-finder",
+      "title": "JSONPath Finder",
+      "logo": "https://testdev.tools/images/tools/jsonpath.png",
+      "affiliateLink": "https://jsonpathfinder.com/",
+      "pricing": "free",
+      "category": "devtools",
+      "description": "Essential tool for API testing. Paste JSON, click a node, and get the corresponding JSONPath expression immediately.",
+      "tags": ["json", "jsonpath", "utility", "api-testing"]
+    },
+    {
+      "slug": "lighthouse",
+      "title": "Google Lighthouse",
+      "logo": "https://testdev.tools/images/tools/lighthouse.svg",
+      "affiliateLink": "https://developers.google.com/web/tools/lighthouse",
+      "pricing": "free",
+      "category": "performance-testing",
+      "description": "Open-source, automated tool for improving the quality of web pages. Audits performance, accessibility, SEO, and more.",
+      "tags": ["performance", "seo", "google", "audit"]
+    },
+    {
+      "slug": "browserstack",
+      "title": "BrowserStack",
+      "logo": "https://testdev.tools/images/tools/browserstack.png",
+      "affiliateLink": "https://www.browserstack.com/",
+      "pricing": "paid",
+      "category": "cloud-testing",
+      "description": "The world's largest cloud testing platform. Provides 3000+ real devices and browsers for manual and automated testing.",
+      "tags": ["cloud-testing", "compatibility", "real-devices", "saas"]
+    },
+    {
+      "slug": "saucelabs",
+      "title": "Sauce Labs",
+      "logo": "https://testdev.tools/images/tools/saucelabs.png",
+      "affiliateLink": "https://saucelabs.com/",
+      "pricing": "paid",
+      "category": "cloud-testing",
+      "description": "A pioneering cloud testing platform and major contributor to Selenium. Provides highly stable automated testing environments.",
+      "tags": ["cloud-testing", "selenium", "infrastructure", "enterprise"]
+    },
+    {
+      "slug": "visual-studio-code",
+      "title": "Visual Studio Code",
+      "logo": "https://testdev.tools/images/tools/vs-code.png",
+      "affiliateLink": "https://code.visualstudio.com/",
+      "pricing": "free",
+      "category": "ide",
+      "description": "The most popular code editor. Extensive plugin ecosystem with official support for Playwright, Cypress, Postman, making it a top choice for QA.",
+      "tags": ["editor", "microsoft", "extensions", "ide"]
+    },
+    {
+      "slug": "intellij-idea",
+      "title": "IntelliJ IDEA",
+      "logo": "https://testdev.tools/images/tools/intellijidea.png",
+      "affiliateLink": "https://www.jetbrains.com/idea/",
+      "pricing": "freemium",
+      "category": "ide",
+      "description": "The ultimate IDE for Java developers. Unmatched intelligent coding assistance and perfect integration with JUnit, TestNG, and Selenium.",
+      "tags": ["ide", "java", "jetbrains", "productivity"]
+    },
+    {
+      "slug": "dbeaver",
+      "title": "DBeaver",
+      "logo": "https://dbeaver.io/images/dbeaver-head.png",
+      "affiliateLink": "https://dbeaver.io/",
+      "pricing": "free",
+      "category": "database",
+      "description": "Universal database tool. Supports MySQL, PostgreSQL, Oracle, SQLite, and almost all other databases. Essential for checking test data.",
+      "tags": ["database", "sql", "client", "opensource"]
+    },
+    {
+      "slug": "docker",
+      "title": "Docker",
+      "logo": "https://testdev.tools/images/tools/docker.png",
+      "affiliateLink": "https://www.docker.com/",
+      "pricing": "freemium",
+      "category": "cicd-devops",
+      "description": "Standard for containerization. Used to quickly spin up test environments (Selenium Grid, DBs) ensuring consistency across dev, test, and prod.",
+      "tags": ["containers", "infrastructure", "devops", "virtualization"]
+    }
+  ]
