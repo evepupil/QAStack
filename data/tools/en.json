@@ -6,6 +6,7 @@
     "description": "Modern end-to-end testing framework by Microsoft. Supports multiple browsers with a single API.",
     "affiliateLink": "https://playwright.dev/",
     "pricing": "free",
+    "category": "web-automation",
     "tags": ["automation", "e2e-testing", "ui-testing"],
     "content": "playwright.md"
   },
@@ -16,6 +17,7 @@
     "description": "Delightful JavaScript testing framework with a focus on simplicity. Works with React, Vue, Angular, and more.",
     "affiliateLink": "https://jestjs.io/",
     "pricing": "free",
+    "category": "web-automation",
     "tags": ["unit-testing", "automation"],
     "content": "jest.md"
   },
@@ -26,6 +28,7 @@
     "description": "Browser automation framework for web application testing. Supports multiple programming languages and browsers.",
     "affiliateLink": "https://www.selenium.dev/",
     "pricing": "free",
+    "category": "web-automation",
     "tags": ["automation", "ui-testing", "browser-automation"],
     "content": "selenium.md"
   },
@@ -36,6 +39,7 @@
     "description": "Fast, easy and reliable testing for anything that runs in a browser. Modern end-to-end testing framework.",
     "affiliateLink": "https://www.cypress.io/",
     "pricing": "freemium",
+    "category": "web-automation",
     "tags": ["e2e-testing", "ui-testing", "automation"],
     "content": "cypress.md"
   },
@@ -46,7 +50,8 @@
     "description": "API development and testing platform with powerful collaboration features for teams.",
     "affiliateLink": "https://www.postman.com/",
     "pricing": "freemium",
-    "tags": ["api-testing", "automation"],
+    "category": "api-testing",
+    "tags": ["api-testing", "automation", "performance-testing"],
     "content": "postman.md"
   },
   {
@@ -56,7 +61,8 @@
     "description": "Open-source load testing tool for analyzing and measuring performance of various services.",
     "affiliateLink": "https://jmeter.apache.org/",
     "pricing": "free",
-    "tags": ["performance", "load-testing"],
+    "category": "performance-testing",
+    "tags": ["performance-testing", "load-testing"],
     "content": "jmeter.md"
   }
 ]

@@ -2,9 +2,11 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
-import { getAllTools, getToolBySlug } from '@/lib/tools';
+import { getAllTools, getToolBySlug, getAllCategories, getToolsByCategory } from '@/lib/tools';
 import { locales, Locale } from '@/lib/i18n';
 import { getTranslations } from '@/lib/translations';
+import { ToolCard } from '@/components/ToolCard';
+import { Sidebar } from '@/components/Sidebar';
 
 interface ToolPageProps {
   params: Promise<{
@@ -20,6 +22,13 @@ export async function generateStaticParams() {
     params.push(...tools.map((tool) => ({
       locale,
       slug: tool.slug,
+    })));
+
+    const categoryTiers = getAllCategories(locale);
+    const categories = categoryTiers.flatMap(tier => tier.categories);
+    params.push(...categories.map((category) => ({
+      locale,
+      slug: category.slug,
     })));
   }
   return params;
@@ -46,7 +55,49 @@ export default async function ToolPage({ params }: ToolPageProps) {
   const tool = await getToolBySlug(slug, locale as Locale);
   const t = getTranslations(locale as Locale);
 
+  // Check if slug is a category
   if (!tool) {
+    const categoryTiers = getAllCategories(locale as Locale);
+    const category = categoryTiers
+      .flatMap(tier => tier.categories)
+      .find(cat => cat.slug === slug);
+
+    if (category) {
+      const tools = await getToolsByCategory(slug, locale as Locale);
+
+      return (
+        <div className="flex justify-center min-h-screen">
+          <div className="flex w-full max-w-[1600px]">
+            <Sidebar categoryTiers={categoryTiers} />
+
+            <main className="flex-1 px-8 py-12">
+              <div className="mb-8">
+                <h1 className="text-4xl font-bold mb-4">{category.name}</h1>
+                <p className="text-muted-foreground mb-2">{category.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {tools.length} {tools.length === 1 ? 'tool' : 'tools'} found
+                </p>
+              </div>
+
+              {tools.length === 0 ? (
+                <div className="rounded-lg border border-dashed p-12 text-center">
+                  <p className="text-lg text-muted-foreground">
+                    No tools found in this category yet.
+                  </p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {tools.map((tool) => (
+                    <ToolCard key={tool.slug} tool={tool} locale={locale as Locale} />
+                  ))}
+                </div>
+              )}
+            </main>
+          </div>
+        </div>
+      );
+    }
+
     notFound();
   }
 

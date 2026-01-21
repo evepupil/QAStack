@@ -1,4 +1,4 @@
-import { getAllTools } from '@/lib/tools';
+import { getAllTools, getAllCategories } from '@/lib/tools';
 import { ToolCard } from '@/components/ToolCard';
 import { Sidebar } from '@/components/Sidebar';
 import { Locale } from '@/lib/i18n';
@@ -11,12 +11,13 @@ interface ToolsPageProps {
 export default async function ToolsPage({ params }: ToolsPageProps) {
   const { locale } = await params;
   const tools = await getAllTools(locale as Locale);
+  const categoryTiers = getAllCategories(locale as Locale);
 
   return (
     <div className="flex justify-center min-h-screen">
       <div className="flex w-full max-w-[1600px]">
         {/* Sidebar */}
-        <Sidebar />
+        <Sidebar categoryTiers={categoryTiers} />
 
         {/* Main Content */}
         <main className="flex-1 px-8 py-12">

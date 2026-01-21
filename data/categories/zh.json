@@ -1,0 +1,104 @@
+[
+  {
+    "tier": 1,
+    "tierName": "全链路测试",
+    "categories": [
+      {
+        "slug": "web-automation",
+        "name": "UI 自动化测试",
+        "description": "包含 Selenium、Playwright、Cypress 等 UI 自动化测试工具",
+        "icon": "MousePointer"
+      },
+      {
+        "slug": "mobile-testing",
+        "name": "移动端测试",
+        "description": "移动应用测试工具，如 Appium、Detox、Maestro",
+        "icon": "Smartphone"
+      },
+      {
+        "slug": "api-testing",
+        "name": "API 测试 & 调试",
+        "description": "API 测试和调试工具，包含 Postman、Insomnia",
+        "icon": "Code"
+      },
+      {
+        "slug": "performance-testing",
+        "name": "性能/压力测试",
+        "description": "性能和负载测试工具，如 JMeter、K6",
+        "icon": "Gauge"
+      },
+      {
+        "slug": "network-proxy",
+        "name": "抓包与网络代理",
+        "description": "网络流量抓包和代理工具，如 Charles",
+        "icon": "Network"
+      },
+      {
+        "slug": "security-testing",
+        "name": "安全/渗透测试",
+        "description": "安全和渗透测试工具，包含 Burp Suite、OWASP ZAP",
+        "icon": "Shield"
+      }
+    ]
+  },
+  {
+    "tier": 2,
+    "tierName": "开发与效能",
+    "categories": [
+      {
+        "slug": "cicd-devops",
+        "name": "CI/CD 与 DevOps",
+        "description": "持续集成和 DevOps 工具，如 Jenkins、GitLab CI",
+        "icon": "Rocket"
+      },
+      {
+        "slug": "test-management",
+        "name": "测试管理 (TMS)",
+        "description": "测试用例管理和 TMS 平台",
+        "icon": "FileCheck"
+      },
+      {
+        "slug": "mock-data",
+        "name": "造数与 Mock",
+        "description": "测试数据生成和 Mock 工具",
+        "icon": "Database"
+      },
+      {
+        "slug": "accessibility",
+        "name": "无障碍测试",
+        "description": "无障碍（A11y）测试工具和验证器",
+        "icon": "Eye"
+      }
+    ]
+  },
+  {
+    "tier": 3,
+    "tierName": "辅助工具",
+    "categories": [
+      {
+        "slug": "cloud-testing",
+        "name": "跨浏览器/云测平台",
+        "description": "跨浏览器和云测试平台，如 BrowserStack、SauceLabs",
+        "icon": "Cloud"
+      },
+      {
+        "slug": "visual-testing",
+        "name": "视觉回归测试",
+        "description": "视觉回归测试工具，如 Percy、Applitools",
+        "icon": "Camera"
+      },
+      {
+        "slug": "exploratory",
+        "name": "探索性测试插件",
+        "description": "浏览器插件和探索性测试工具",
+        "icon": "Search"
+      },
+      {
+        "slug": "ide-editors",
+        "name": "IDE 与编辑器",
+        "description": "集成开发环境，如 VS Code、IntelliJ",
+        "icon": "FileCode"
+      }
+    ]
+  }
+]

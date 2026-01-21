@@ -1,0 +1,104 @@
+[
+  {
+    "tier": 1,
+    "tierName": "Full-Stack Testing",
+    "categories": [
+      {
+        "slug": "web-automation",
+        "name": "Web Automation",
+        "description": "UI automation testing tools including Selenium, Playwright, and Cypress",
+        "icon": "MousePointer"
+      },
+      {
+        "slug": "mobile-testing",
+        "name": "Mobile Testing",
+        "description": "Mobile app testing tools like Appium, Detox, and Maestro",
+        "icon": "Smartphone"
+      },
+      {
+        "slug": "api-testing",
+        "name": "API Testing & Debugging",
+        "description": "API testing and debugging tools including Postman and Insomnia",
+        "icon": "Code"
+      },
+      {
+        "slug": "performance-testing",
+        "name": "Performance Testing",
+        "description": "Performance and load testing tools like JMeter and K6",
+        "icon": "Gauge"
+      },
+      {
+        "slug": "network-proxy",
+        "name": "Network Proxy",
+        "description": "Network traffic capture and proxy tools like Charles",
+        "icon": "Network"
+      },
+      {
+        "slug": "security-testing",
+        "name": "Security Testing",
+        "description": "Security and penetration testing tools including Burp Suite and OWASP ZAP",
+        "icon": "Shield"
+      }
+    ]
+  },
+  {
+    "tier": 2,
+    "tierName": "DevOps & Management",
+    "categories": [
+      {
+        "slug": "cicd-devops",
+        "name": "CI/CD & DevOps",
+        "description": "Continuous integration and DevOps tools like Jenkins and GitLab CI",
+        "icon": "Rocket"
+      },
+      {
+        "slug": "test-management",
+        "name": "Test Management",
+        "description": "Test case management and TMS platforms",
+        "icon": "FileCheck"
+      },
+      {
+        "slug": "mock-data",
+        "name": "Mock & Data Generation",
+        "description": "Test data generation and mocking tools",
+        "icon": "Database"
+      },
+      {
+        "slug": "accessibility",
+        "name": "Accessibility Testing",
+        "description": "Accessibility (A11y) testing tools and validators",
+        "icon": "Eye"
+      }
+    ]
+  },
+  {
+    "tier": 3,
+    "tierName": "Utilities",
+    "categories": [
+      {
+        "slug": "cloud-testing",
+        "name": "Cloud Testing",
+        "description": "Cross-browser and cloud testing platforms like BrowserStack and SauceLabs",
+        "icon": "Cloud"
+      },
+      {
+        "slug": "visual-testing",
+        "name": "Visual Regression Testing",
+        "description": "Visual regression testing tools like Percy and Applitools",
+        "icon": "Camera"
+      },
+      {
+        "slug": "exploratory",
+        "name": "Exploratory Testing",
+        "description": "Browser plugins and tools for exploratory testing",
+        "icon": "Search"
+      },
+      {
+        "slug": "ide-editors",
+        "name": "IDE & Editors",
+        "description": "Integrated development environments like VS Code and IntelliJ",
+        "icon": "FileCode"
+      }
+    ]
+  }
+]

@@ -13,6 +13,7 @@ export interface Tool {
   description: string;
   affiliateLink: string;
   pricing: 'free' | 'paid' | 'freemium';
+  category: string;
   tags: string[];
   content: string;
 }
@@ -21,6 +22,13 @@ export interface Category {
   slug: string;
   name: string;
   description: string;
+  icon: string;
+}
+
+export interface CategoryTier {
+  tier: number;
+  tierName: string;
+  categories: Category[];
 }
 
 // Read tools from JSON file
@@ -54,6 +62,7 @@ export async function getAllTools(locale: Locale = 'en'): Promise<Tool[]> {
     description: tool.description,
     affiliateLink: tool.affiliateLink,
     pricing: tool.pricing,
+    category: tool.category,
     tags: tool.tags,
     content: tool.content,
   }));
@@ -76,6 +85,7 @@ export async function getToolBySlug(slug: string, locale: Locale = 'en'): Promis
     description: tool.description,
     affiliateLink: tool.affiliateLink,
     pricing: tool.pricing,
+    category: tool.category,
     tags: tool.tags,
     content,
   };
@@ -91,4 +101,17 @@ export async function getToolsByTag(tag: string, locale: Locale = 'en'): Promise
 export async function getToolsByPricing(pricing: 'free' | 'paid' | 'freemium', locale: Locale = 'en'): Promise<Tool[]> {
   const allTools = await getAllTools(locale);
   return allTools.filter((tool) => tool.pricing === pricing);
+}
+
+// Get all categories
+export function getAllCategories(locale: Locale = 'en'): CategoryTier[] {
+  const filePath = path.join(process.cwd(), 'data', 'categories', `${locale}.json`);
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  return JSON.parse(fileContents);
+}
+
+// Filter tools by category
+export async function getToolsByCategory(category: string, locale: Locale = 'en'): Promise<Tool[]> {
+  const allTools = await getAllTools(locale);
+  return allTools.filter((tool) => tool.category === category);
 }
