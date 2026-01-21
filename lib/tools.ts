@@ -41,6 +41,12 @@ function getToolsData(locale: Locale): Tool[] {
 // Read markdown content
 async function getMarkdownContent(filename: string, locale: Locale): Promise<string> {
   const filePath = path.join(process.cwd(), 'data', 'content', locale, filename);
+
+  // Check if file exists
+  if (!fs.existsSync(filePath)) {
+    return '';
+  }
+
   const fileContents = fs.readFileSync(filePath, 'utf8');
 
   // Convert markdown to HTML
@@ -75,8 +81,8 @@ export async function getToolBySlug(slug: string, locale: Locale = 'en'): Promis
 
   if (!tool) return null;
 
-  // Load markdown content
-  const content = await getMarkdownContent(tool.content, locale);
+  // Load markdown content if available
+  const content = tool.content ? await getMarkdownContent(tool.content, locale) : '';
 
   return {
     slug: tool.slug,

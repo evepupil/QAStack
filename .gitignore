@@ -39,3 +39,7 @@ next-env.d.ts
 # keystatic
 .keystatic/
 public/images/
+
+# OpenNext Cloudflare
+/.open-next/
+/.wrangler/
