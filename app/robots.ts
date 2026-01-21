@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 /**
  * 生成 robots.txt 文件
  * 告诉搜索引擎爬虫哪些页面可以访问

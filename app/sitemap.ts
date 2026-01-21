@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { getAllTools } from '@/lib/tools';
 import { getAllBlogs } from '@/lib/blogs';
 
+export const dynamic = 'force-static';
+
 /**
  * 生成网站地图
  * Next.js 会在构建时自动调用此函数生成 sitemap.xml
