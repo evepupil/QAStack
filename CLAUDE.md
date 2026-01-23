@@ -4,127 +4,175 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-QAStack is a modern, SEO-optimized directory site for software testing tools built with Next.js 15 App Router and TypeScript. The site uses a simple JSON-based data structure with Markdown content files for tool descriptions.
+QAStack is a modern software testing tools directory built with Next.js 15 (App Router) and TypeScript. It serves as an SEO-optimized directory site for discovering software testing tools, featuring internationalization (English/Chinese), blog functionality, and a three-tier category system.
 
-## Development Commands
+## Key Commands
 
-```bash
-# Start development server (runs on http://localhost:3000)
-npm run dev
+### Development
+- `npm run dev` - Start development server on http://localhost:3000
+- `npm run build` - Build for production (static export to `.next` folder)
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
 
-# Build for production
-npm run build
+### Cloudflare Pages Deployment
+- `npm run pages:build` - Build for Cloudflare Pages using OpenNext
+- `npm run pages:deploy` - Build and deploy to Cloudflare Pages
+- `npm run pages:dev` - Build and preview Cloudflare Pages locally
 
-# Start production server
-npm start
+## Architecture & Data Flow
 
-# Run linter
-npm run lint
+### Core Structure
+- **App Router**: Next.js 15 App Router in `/app/[locale]/` with dynamic locale routing
+- **Data Layer**: JSON-based content system in `/data/` (no CMS database)
+- **Static Generation**: All pages pre-rendered at build time for SEO
+- **Internationalization**: Dual-language support (en/zh) via route parameters
+
+### Data Organization
+```
+data/
+├── tools/           # Tool metadata (en.json, zh.json)
+├── blogs/           # Blog post metadata (en.json, zh.json)
+├── categories/      # Three-tier category structure (en.json, zh.json)
+└── content/         # Markdown content for tools
+    ├── en/
+    └── zh/
 ```
 
-## Architecture
+### Key Components
 
-### Data Flow Architecture
+#### Tool System (`lib/tools.ts`)
+- **Tool Interface**: Contains slug, title, logo, description, affiliateLink, pricing, category, tags, content
+- **Category Tiers**: Three-tier structure (Full-Stack Testing, DevOps & Management, Utilities)
+- **Filtering**: Functions for filtering by tag, pricing, and category
+- **Content Loading**: Markdown content converted to HTML via remark
 
-The application uses a **file-based data system** instead of a traditional CMS:
+#### Blog System (`lib/blogs.ts`)
+- **BlogPost Interface**: Contains slug, title, excerpt, coverImage, date, category, content
+- **Markdown Support**: Blog content stored as markdown files in `/data/blog/[locale]/`
+- **Latest Posts**: Utility to fetch recent blog entries
 
-1. **Tool Metadata**: Stored in `data/tools.json` - contains tool information (title, logo, description, pricing, tags, etc.)
-2. **Tool Content**: Stored as individual Markdown files in `data/content/` directory (e.g., `playwright.md`, `jest.md`)
-3. **Data Access Layer**: `lib/tools.ts` provides utility functions to read and process tool data
-4. **Static Generation**: All pages are statically generated at build time using Next.js App Router
-
-### Key Data Structures
-
-**Tool Interface** (`lib/tools.ts`):
-```typescript
-interface Tool {
-  slug: string;              // URL-friendly identifier
-  title: string;             // Display name
-  logo: string | null;       // Path to logo image
-  description: string;       // Short description for cards
-  affiliateLink: string;     // External website URL
-  pricing: 'free' | 'paid' | 'freemium';
-  tags: string[];           // Categories (automation, api-testing, etc.)
-  content: string;          // Markdown filename or HTML content
-}
-```
+#### Internationalization (`lib/i18n.ts`, `lib/translations.ts`)
+- **Locales**: `en` (English) and `zh` (Chinese)
+- **Route Structure**: `/{locale}/tools/{slug}`, `/{locale}/blog/{slug}`
+- **Translations**: Centralized translation object for UI text
 
 ### Page Structure
 
-- **Home (`app/page.tsx`)**: Redirects to `/tools`
-- **Tools List (`app/tools/page.tsx`)**: Grid view of all tools with sidebar navigation
-- **Tool Detail (`app/tools/[slug]/page.tsx`)**: Individual tool page with full content
-  - Uses `generateStaticParams()` for static generation
-  - Uses `generateMetadata()` for SEO optimization
-  - Markdown content is converted to HTML using remark
+#### Home Page (`/app/[locale]/page.tsx`)
+- Hero section
+- Latest tools grid (9 tools)
+- Latest blog posts section
+- Footer
 
-### Component Organization
+#### Tools Directory (`/app/[locale]/tools/page.tsx`)
+- Sidebar with category navigation
+- Search bar (UI only, no functionality)
+- Grid of all tools
+- Tool count display
 
-- **Header** (`components/Header.tsx`): Global navigation bar
-- **Sidebar** (`components/Sidebar.tsx`): Left sidebar for filtering/navigation
-- **ToolCard** (`components/ToolCard.tsx`): Reusable card component for tool grid display
+#### Tool Detail (`/app/[locale]/tools/[slug]/page.tsx`)
+- Tool metadata display (logo, title, description, pricing)
+- Tags display
+- Markdown content rendered as HTML
+- Related tools by category
+- Dynamic route generation via `generateStaticParams`
 
-### Styling System
+#### Blog Pages
+- Blog listing and detail pages in `/app/[locale]/blog/`
 
-- **Tailwind CSS**: Utility-first CSS framework
-- **CSS Variables**: Theme colors defined using HSL values in `app/globals.css`
-- **Dark Mode**: Supported via `class` strategy in `tailwind.config.ts`
-- **Typography Plugin**: `@tailwindcss/typography` for prose content styling
+### Component Library
 
-## Adding New Tools
+#### Core Components
+- **ToolCard.tsx**: Reusable card component for tool display
+- **BlogCard.tsx**: Card component for blog posts
+- **Sidebar.tsx**: Category navigation with three-tier structure
+- **Header.tsx**: Navigation with locale switcher
+- **Hero.tsx**: Landing page hero section
+- **Footer.tsx**: Site footer
+- **ThemeProvider.tsx**: Dark/light theme support
 
-To add a new tool to the directory:
+### Styling & UI
+- **Tailwind CSS**: Utility-first styling
+- **Shadcn UI**: Component library (via Tailwind)
+- **Lucide React**: Icon library
+- **Theme Support**: Dark/light mode with `next-themes`
 
-1. Add tool metadata to `data/tools.json`:
-```json
-{
-  "slug": "tool-name",
-  "title": "Tool Name",
-  "logo": "/images/tools/tool-name.png",
-  "description": "Short description",
-  "affiliateLink": "https://example.com",
-  "pricing": "free",
-  "tags": ["automation", "ui-testing"],
-  "content": "tool-name.md"
-}
-```
+### Deployment Configuration
 
-2. Create Markdown content file at `data/content/tool-name.md`
-3. Add logo image to `public/images/tools/`
+#### Next.js Config (`next.config.ts`)
+- `output: 'export'` - Static site generation
+- `images.unoptimized: true` - Required for static export
 
-## Important Technical Details
+#### OpenNext Config (`open-next.config.ts`)
+- Cloudflare Pages deployment configuration
+- Edge runtime for middleware
+- External node:crypto for edge compatibility
 
-### Image Handling
+#### Wrangler Config (`wrangler.toml`)
+- Cloudflare Pages deployment settings
+- Observability enabled
+- Output directory: `out`
 
-- Next.js Image component is configured to allow all remote image hosts (`next.config.ts`)
-- Logo images should be placed in `public/images/tools/`
-- Images are optimized automatically by Next.js
+## Development Workflow
 
-### Markdown Processing
+### Adding New Tools
+1. Add tool entry to `data/tools/[locale].json`
+2. Create markdown content in `data/content/[locale]/[slug].md` (optional)
+3. Add category if needed in `data/categories/[locale].json`
+4. Run `npm run build` to regenerate static pages
 
-- Uses `remark` and `remark-html` to convert Markdown to HTML
-- Content is processed server-side in `lib/tools.ts:getMarkdownContent()`
-- HTML is rendered using `dangerouslySetInnerHTML` with Tailwind typography classes
+### Adding Blog Posts
+1. Add post metadata to `data/blogs/[locale].json`
+2. Create markdown content in `data/blog/[locale]/[slug].md`
+3. Run `npm run build` to regenerate static pages
+
+### Modifying Categories
+1. Edit `data/categories/[locale].json`
+2. Categories are organized in three tiers:
+   - Tier 1: Full-Stack Testing (Web Automation, Mobile Testing, API Testing, Performance, Network Proxy, Security)
+   - Tier 2: DevOps & Management (CI/CD, Test Management, Mock Data, Accessibility)
+   - Tier 3: Utilities (Cloud Testing, Visual Testing, Exploratory, IDE & Editors)
+
+## Important Notes
 
 ### Static Generation
+- All pages are pre-rendered at build time
+- Dynamic routes use `generateStaticParams` for SSG
+- No runtime data fetching from databases
+- Content changes require rebuild and redeploy
 
-- All tool pages are pre-rendered at build time
-- `generateStaticParams()` creates routes for all tools in `data/tools.json`
-- Changes to tool data require a rebuild to take effect
+### Image Optimization
+- External images used for tool logos (no local image optimization)
+- `next/image` with `unoptimized: true` for static export
 
-### Available Tags
+### TypeScript Configuration
+- Strict mode enabled
+- Path aliases configured: `@/*` maps to project root
+- Incremental compilation enabled
 
-Current tag options: `automation`, `api-testing`, `ui-testing`, `e2e-testing`, `unit-testing`, `browser-automation`, `performance`, `load-testing`
+### Environment
+- Node.js 18+ required
+- Uses npm package manager (v10.9.2)
+- No environment variables required for basic operation
 
-## File Path Requirements
+### Content Management
+- No Keystatic CMS (mentioned in README but not implemented)
+- Manual JSON file editing for content management
+- Markdown files for detailed content
 
-**CRITICAL**: When using Edit or Write tools on Windows, file paths MUST use backslashes (`\`), not forward slashes (`/`).
+## Testing Strategy
+- No test framework currently configured
+- Manual testing via `npm run dev`
+- Build verification via `npm run build`
 
-## Tech Stack
+## Common Issues & Solutions
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS with custom theme
-- **UI Components**: Custom components with `lucide-react` icons
-- **Utilities**: `clsx`, `tailwind-merge`, `class-variance-authority`
-- **Content Processing**: `remark`, `remark-html`
+### Build Failures
+- Check for malformed JSON in data files
+- Verify all referenced markdown files exist
+- Ensure TypeScript types are correct
+
+### Deployment Issues
+- Cloudflare Pages requires `out` directory (configured in wrangler.toml)
+- Static export must complete successfully
+- Check OpenNext configuration for edge runtime compatibility
