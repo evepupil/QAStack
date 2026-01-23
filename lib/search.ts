@@ -1,4 +1,11 @@
 import { Tool, Locale } from './tools';
+import { BlogPost } from './blogs';
+
+export interface SearchResult {
+  type: 'tool' | 'blog';
+  item: Tool | BlogPost;
+  score: number;
+}
 
 /**
  * Search tools by query string
@@ -52,4 +59,65 @@ export function searchTools(tools: Tool[], query: string, locale: Locale): Tool[
     .sort((a, b) => b.score - a.score)
     .slice(0, 10)
     .map(({ tool }) => tool);
+}
+
+/**
+ * Search blogs by query string
+ * Matches against title, excerpt, and category
+ * Returns results sorted by relevance score
+ */
+export function searchBlogs(blogs: BlogPost[], query: string, locale: Locale): BlogPost[] {
+  if (!query.trim()) return [];
+
+  const normalizedQuery = query.toLowerCase().trim();
+
+  const scoredBlogs = blogs.map(blog => {
+    let score = 0;
+    const title = blog.title.toLowerCase();
+    const excerpt = blog.excerpt.toLowerCase();
+    const category = blog.category.toLowerCase().replace(/-/g, ' ');
+
+    // Title exact match (highest priority)
+    if (title === normalizedQuery) {
+      score += 100;
+    } else if (title.startsWith(normalizedQuery)) {
+      score += 90;
+    } else if (title.includes(normalizedQuery)) {
+      score += 80;
+    }
+
+    // Category match
+    if (category.includes(normalizedQuery) || normalizedQuery.includes(category)) {
+      score += 50;
+    }
+
+    // Excerpt match
+    if (excerpt.includes(normalizedQuery)) {
+      score += 40;
+    }
+
+    return { blog, score };
+  });
+
+  return scoredBlogs
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5)
+    .map(({ blog }) => blog);
+}
+
+/**
+ * Combined search for tools and blogs
+ * Returns grouped results
+ */
+export function searchAll(
+  tools: Tool[],
+  blogs: BlogPost[],
+  query: string,
+  locale: Locale
+): { tools: Tool[]; blogs: BlogPost[] } {
+  return {
+    tools: searchTools(tools, query, locale),
+    blogs: searchBlogs(blogs, query, locale),
+  };
 }

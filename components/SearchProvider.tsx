@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
 import { Tool, Locale } from '@/lib/tools';
+import { BlogPost } from '@/lib/blogs';
 import { SearchDialog } from './SearchDialog';
 
 interface SearchContextType {
@@ -23,6 +24,7 @@ export function useSearch() {
 interface SearchProviderProps {
   children: ReactNode;
   tools: Tool[];
+  blogs: BlogPost[];
   locale: Locale;
   translations: {
     placeholder: string;
@@ -32,10 +34,12 @@ interface SearchProviderProps {
     navigate: string;
     select: string;
     close: string;
+    tools: string;
+    blogs: string;
   };
 }
 
-export function SearchProvider({ children, tools, locale, translations }: SearchProviderProps) {
+export function SearchProvider({ children, tools, blogs, locale, translations }: SearchProviderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openSearch = useCallback(() => setIsOpen(true), []);
@@ -73,6 +77,7 @@ export function SearchProvider({ children, tools, locale, translations }: Search
         isOpen={isOpen}
         onClose={closeSearch}
         tools={tools}
+        blogs={blogs}
         locale={locale}
         translations={translations}
       />

@@ -2,10 +2,11 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { Search, X } from 'lucide-react';
+import { Search, X, Wrench, FileText } from 'lucide-react';
 import Image from 'next/image';
 import { Tool, Locale } from '@/lib/tools';
-import { searchTools } from '@/lib/search';
+import { BlogPost } from '@/lib/blogs';
+import { searchAll } from '@/lib/search';
 import { highlightText } from '@/lib/highlight';
 import { cn } from '@/lib/utils';
 
@@ -13,6 +14,7 @@ interface SearchDialogProps {
   isOpen: boolean;
   onClose: () => void;
   tools: Tool[];
+  blogs: BlogPost[];
   locale: Locale;
   translations: {
     placeholder: string;
@@ -22,17 +24,28 @@ interface SearchDialogProps {
     navigate: string;
     select: string;
     close: string;
+    tools: string;
+    blogs: string;
   };
 }
 
-export function SearchDialog({ isOpen, onClose, tools, locale, translations }: SearchDialogProps) {
+type ResultItem = { type: 'tool'; item: Tool } | { type: 'blog'; item: BlogPost };
+
+export function SearchDialog({ isOpen, onClose, tools, blogs, locale, translations }: SearchDialogProps) {
   const [query, setQuery] = useState('');
   const [debouncedQuery, setDebouncedQuery] = useState('');
-  const [results, setResults] = useState<Tool[]>([]);
+  const [toolResults, setToolResults] = useState<Tool[]>([]);
+  const [blogResults, setBlogResults] = useState<BlogPost[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  // Flatten results for keyboard navigation
+  const allResults: ResultItem[] = [
+    ...toolResults.map(item => ({ type: 'tool' as const, item })),
+    ...blogResults.map(item => ({ type: 'blog' as const, item })),
+  ];
 
   // Debounce search
   useEffect(() => {
@@ -43,39 +56,53 @@ export function SearchDialog({ isOpen, onClose, tools, locale, translations }: S
   // Execute search
   useEffect(() => {
     if (debouncedQuery.trim()) {
-      setResults(searchTools(tools, debouncedQuery, locale));
+      const results = searchAll(tools, blogs, debouncedQuery, locale);
+      setToolResults(results.tools);
+      setBlogResults(results.blogs);
       setSelectedIndex(0);
     } else {
-      setResults([]);
+      setToolResults([]);
+      setBlogResults([]);
     }
-  }, [debouncedQuery, tools, locale]);
+  }, [debouncedQuery, tools, blogs, locale]);
 
   // Focus input when opened
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 50);
       setQuery('');
-      setResults([]);
+      setToolResults([]);
+      setBlogResults([]);
       setSelectedIndex(0);
     }
   }, [isOpen]);
 
   // Scroll selected item into view
   useEffect(() => {
-    if (resultsRef.current && results.length > 0) {
-      const selectedElement = resultsRef.current.children[selectedIndex] as HTMLElement;
+    if (resultsRef.current && allResults.length > 0) {
+      const selectedElement = resultsRef.current.querySelector(`[data-index="${selectedIndex}"]`);
       if (selectedElement) {
         selectedElement.scrollIntoView({ block: 'nearest' });
       }
     }
-  }, [selectedIndex, results.length]);
+  }, [selectedIndex, allResults.length]);
+
+  // Navigate to result
+  const navigateToResult = useCallback((result: ResultItem) => {
+    if (result.type === 'tool') {
+      router.push(`/${locale}/tools/${result.item.slug}`);
+    } else {
+      router.push(`/${locale}/blog/${result.item.slug}`);
+    }
+    onClose();
+  }, [router, locale, onClose]);
 
   // Handle keyboard navigation
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
-        setSelectedIndex(i => Math.min(i + 1, results.length - 1));
+        setSelectedIndex(i => Math.min(i + 1, allResults.length - 1));
         break;
       case 'ArrowUp':
         e.preventDefault();
@@ -83,16 +110,15 @@ export function SearchDialog({ isOpen, onClose, tools, locale, translations }: S
         break;
       case 'Enter':
         e.preventDefault();
-        if (results[selectedIndex]) {
-          router.push(`/${locale}/tools/${results[selectedIndex].slug}`);
-          onClose();
+        if (allResults[selectedIndex]) {
+          navigateToResult(allResults[selectedIndex]);
         }
         break;
       case 'Escape':
         onClose();
         break;
     }
-  }, [results, selectedIndex, router, locale, onClose]);
+  }, [allResults, selectedIndex, navigateToResult, onClose]);
 
   // Pricing badge colors
   const getPricingColor = (pricing: string) => {
@@ -109,6 +135,9 @@ export function SearchDialog({ isOpen, onClose, tools, locale, translations }: S
   };
 
   if (!isOpen) return null;
+
+  const hasResults = toolResults.length > 0 || blogResults.length > 0;
+  let currentIndex = 0;
 
   return (
     <div
@@ -144,77 +173,143 @@ export function SearchDialog({ isOpen, onClose, tools, locale, translations }: S
         </div>
 
         {/* Results */}
-        <div ref={resultsRef} className="max-h-[60vh] overflow-y-auto p-2">
-          {results.length > 0 ? (
-            results.map((tool, index) => (
-              <button
-                key={tool.slug}
-                onClick={() => {
-                  router.push(`/${locale}/tools/${tool.slug}`);
-                  onClose();
-                }}
-                onMouseEnter={() => setSelectedIndex(index)}
-                className={cn(
-                  "w-full flex items-start gap-3 p-3 rounded-lg transition-all duration-150 text-left group",
-                  index === selectedIndex
-                    ? "bg-primary/10 border border-primary/20"
-                    : "hover:bg-muted border border-transparent"
-                )}
-              >
-                {/* Tool Logo */}
-                {tool.logo ? (
-                  <div className="h-10 w-10 rounded-lg overflow-hidden bg-muted flex items-center justify-center shrink-0">
-                    <Image
-                      src={tool.logo}
-                      alt={tool.title}
-                      width={40}
-                      height={40}
-                      className="h-full w-full object-contain"
-                    />
+        <div ref={resultsRef} className="max-h-[60vh] overflow-y-auto">
+          {hasResults ? (
+            <div className="p-2">
+              {/* Tools Section */}
+              {toolResults.length > 0 && (
+                <div className="mb-2">
+                  <div className="flex items-center gap-2 px-3 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <Wrench className="h-3.5 w-3.5" />
+                    {translations.tools}
                   </div>
-                ) : (
-                  <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                    <span className="text-lg font-semibold text-muted-foreground">
-                      {tool.title.charAt(0)}
-                    </span>
-                  </div>
-                )}
+                  {toolResults.map((tool) => {
+                    const index = currentIndex++;
+                    return (
+                      <button
+                        key={`tool-${tool.slug}`}
+                        data-index={index}
+                        onClick={() => navigateToResult({ type: 'tool', item: tool })}
+                        onMouseEnter={() => setSelectedIndex(index)}
+                        className={cn(
+                          "w-full flex items-start gap-3 p-3 rounded-lg transition-all duration-150 text-left group",
+                          index === selectedIndex
+                            ? "bg-primary/10 border border-primary/20"
+                            : "hover:bg-muted border border-transparent"
+                        )}
+                      >
+                        {/* Tool Logo */}
+                        {tool.logo ? (
+                          <div className="h-10 w-10 rounded-lg overflow-hidden bg-muted flex items-center justify-center shrink-0">
+                            <Image
+                              src={tool.logo}
+                              alt={tool.title}
+                              width={40}
+                              height={40}
+                              className="h-full w-full object-contain"
+                            />
+                          </div>
+                        ) : (
+                          <div className="h-10 w-10 rounded-lg bg-muted flex items-center justify-center shrink-0">
+                            <span className="text-lg font-semibold text-muted-foreground">
+                              {tool.title.charAt(0)}
+                            </span>
+                          </div>
+                        )}
 
-                {/* Tool Info */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-semibold text-sm sm:text-base truncate">
-                      {highlightText(tool.title, query)}
-                    </h4>
-                    <span className={cn("text-xs px-2 py-0.5 rounded-full shrink-0", getPricingColor(tool.pricing))}>
-                      {tool.pricing}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground line-clamp-1 sm:line-clamp-2">
-                    {highlightText(tool.description, query)}
-                  </p>
-                  {tool.tags.length > 0 && (
-                    <div className="hidden sm:flex gap-1.5 mt-2">
-                      {tool.tags.slice(0, 3).map(tag => (
-                        <span
-                          key={tag}
-                          className="text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                        {/* Tool Info */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-semibold text-sm sm:text-base truncate">
+                              {highlightText(tool.title, query)}
+                            </h4>
+                            <span className={cn("text-xs px-2 py-0.5 rounded-full shrink-0", getPricingColor(tool.pricing))}>
+                              {tool.pricing}
+                            </span>
+                          </div>
+                          <p className="text-sm text-muted-foreground line-clamp-1">
+                            {highlightText(tool.description, query)}
+                          </p>
+                        </div>
+
+                        {/* Enter hint for selected */}
+                        {index === selectedIndex && (
+                          <kbd className="self-center text-xs bg-muted px-2 py-1 rounded hidden sm:block shrink-0">
+                            ↵
+                          </kbd>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
+              )}
 
-                {/* Enter hint for selected */}
-                {index === selectedIndex && (
-                  <kbd className="self-center text-xs bg-muted px-2 py-1 rounded hidden sm:block shrink-0">
-                    ↵
-                  </kbd>
-                )}
-              </button>
-            ))
+              {/* Blogs Section */}
+              {blogResults.length > 0 && (
+                <div>
+                  <div className="flex items-center gap-2 px-3 py-2 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    <FileText className="h-3.5 w-3.5" />
+                    {translations.blogs}
+                  </div>
+                  {blogResults.map((blog) => {
+                    const index = currentIndex++;
+                    return (
+                      <button
+                        key={`blog-${blog.slug}`}
+                        data-index={index}
+                        onClick={() => navigateToResult({ type: 'blog', item: blog })}
+                        onMouseEnter={() => setSelectedIndex(index)}
+                        className={cn(
+                          "w-full flex items-start gap-3 p-3 rounded-lg transition-all duration-150 text-left group",
+                          index === selectedIndex
+                            ? "bg-primary/10 border border-primary/20"
+                            : "hover:bg-muted border border-transparent"
+                        )}
+                      >
+                        {/* Blog Cover */}
+                        {blog.coverImage ? (
+                          <div className="h-10 w-14 rounded-lg overflow-hidden bg-muted flex items-center justify-center shrink-0">
+                            <Image
+                              src={blog.coverImage}
+                              alt={blog.title}
+                              width={56}
+                              height={40}
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <div className="h-10 w-14 rounded-lg bg-muted flex items-center justify-center shrink-0">
+                            <FileText className="h-5 w-5 text-muted-foreground" />
+                          </div>
+                        )}
+
+                        {/* Blog Info */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-semibold text-sm sm:text-base truncate">
+                              {highlightText(blog.title, query)}
+                            </h4>
+                            <span className="text-xs px-2 py-0.5 rounded-full bg-secondary text-secondary-foreground shrink-0">
+                              {blog.category}
+                            </span>
+                          </div>
+                          <p className="text-sm text-muted-foreground line-clamp-1">
+                            {highlightText(blog.excerpt, query)}
+                          </p>
+                        </div>
+
+                        {/* Enter hint for selected */}
+                        {index === selectedIndex && (
+                          <kbd className="self-center text-xs bg-muted px-2 py-1 rounded hidden sm:block shrink-0">
+                            ↵
+                          </kbd>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           ) : query.trim() ? (
             <div className="py-12 text-center">
               <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-50" />

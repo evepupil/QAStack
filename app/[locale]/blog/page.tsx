@@ -1,8 +1,8 @@
 import { getAllBlogs } from '@/lib/blogs';
 import { BlogCard } from '@/components/BlogCard';
 import { Footer } from '@/components/Footer';
+import { SearchTrigger } from '@/components/SearchTrigger';
 import { Locale } from '@/lib/i18n';
-import { Search } from 'lucide-react';
 
 interface BlogPageProps {
   params: Promise<{ locale: string }>;
@@ -27,13 +27,8 @@ export default async function BlogPage({ params }: BlogPageProps) {
           </p>
 
           {/* 搜索框 */}
-          <div className="relative max-w-2xl">
-            <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-            <input
-              type="text"
-              placeholder="Search articles..."
-              className="w-full rounded-lg border bg-background pl-12 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-            />
+          <div className="max-w-2xl">
+            <SearchTrigger placeholder={locale === 'zh' ? '搜索文章...' : 'Search articles...'} />
           </div>
         </div>
       </section>
