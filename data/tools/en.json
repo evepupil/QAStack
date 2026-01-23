@@ -626,5 +626,455 @@
       "opensource"
     ],
     "content": "keploy.md"
+  },
+  {
+    "slug": "jest",
+    "title": "Jest",
+    "logo": "https://jestjs.io/img/jest.png",
+    "affiliateLink": "https://jestjs.io/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "Delightful JavaScript testing framework by Facebook. Zero config, fast, with built-in code coverage, mocking, and snapshot testing.",
+    "tags": [
+      "javascript",
+      "unit-testing",
+      "facebook",
+      "snapshot"
+    ]
+  },
+  {
+    "slug": "vitest",
+    "title": "Vitest",
+    "logo": "https://vitest.dev/logo.svg",
+    "affiliateLink": "https://vitest.dev/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "Blazing fast unit test framework powered by Vite. Native ESM, TypeScript support, and Jest-compatible API.",
+    "tags": [
+      "javascript",
+      "vite",
+      "modern",
+      "fast"
+    ]
+  },
+  {
+    "slug": "puppeteer",
+    "title": "Puppeteer",
+    "logo": "https://www.vectorlogo.zone/logos/ppaboraborapuppeteer/ppaboraborapuppeteer-icon.svg",
+    "affiliateLink": "https://pptr.dev/",
+    "pricing": "free",
+    "category": "web-automation",
+    "description": "Google's Node.js library for controlling Chrome/Chromium. Perfect for web scraping, PDF generation, and automated UI testing.",
+    "tags": [
+      "google",
+      "chrome",
+      "headless",
+      "automation"
+    ]
+  },
+  {
+    "slug": "webdriverio",
+    "title": "WebdriverIO",
+    "logo": "https://webdriver.io/img/logo-webdriver-io.png",
+    "affiliateLink": "https://webdriver.io/",
+    "pricing": "free",
+    "category": "web-automation",
+    "description": "Next-gen browser and mobile automation test framework for Node.js. Supports WebDriver, DevTools, and cloud services.",
+    "tags": [
+      "webdriver",
+      "nodejs",
+      "automation",
+      "cross-browser"
+    ]
+  },
+  {
+    "slug": "rest-assured",
+    "title": "REST Assured",
+    "logo": "https://rest-assured.io/img/logo-transparent.png",
+    "affiliateLink": "https://rest-assured.io/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "Java DSL for simplifying testing of REST services. Fluent API design makes writing API tests intuitive and readable.",
+    "tags": [
+      "java",
+      "rest-api",
+      "dsl",
+      "fluent"
+    ]
+  },
+  {
+    "slug": "karate",
+    "title": "Karate",
+    "logo": "https://raw.githubusercontent.com/karatelabs/karate/master/karate-core/src/main/resources/karate-logo.svg",
+    "affiliateLink": "https://karatelabs.github.io/karate/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "Open-source unified test automation combining API testing, mocks, performance, and UI automation. No coding required.",
+    "tags": [
+      "api-testing",
+      "bdd",
+      "no-code",
+      "gherkin"
+    ]
+  },
+  {
+    "slug": "hoppscotch",
+    "title": "Hoppscotch",
+    "logo": "https://hoppscotch.io/icon.png",
+    "affiliateLink": "https://hoppscotch.io/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "Open-source API development ecosystem. Lightweight, fast, and beautiful alternative to Postman with real-time collaboration.",
+    "tags": [
+      "opensource",
+      "lightweight",
+      "pwa",
+      "realtime"
+    ]
+  },
+  {
+    "slug": "locust",
+    "title": "Locust",
+    "logo": "https://locust.io/static/img/logo.png",
+    "affiliateLink": "https://locust.io/",
+    "pricing": "free",
+    "category": "performance-testing",
+    "description": "Modern load testing framework written in Python. Define user behavior with Python code, distributed and scalable.",
+    "tags": [
+      "python",
+      "load-testing",
+      "distributed",
+      "scalable"
+    ]
+  },
+  {
+    "slug": "artillery",
+    "title": "Artillery",
+    "logo": "https://www.artillery.io/img/artillery-icon.svg",
+    "affiliateLink": "https://artillery.io/",
+    "pricing": "freemium",
+    "category": "performance-testing",
+    "description": "Modern, powerful load testing toolkit. Supports HTTP, WebSocket, Socket.io, and more with YAML-based scenarios.",
+    "tags": [
+      "load-testing",
+      "nodejs",
+      "websocket",
+      "yaml"
+    ]
+  },
+  {
+    "slug": "wiremock",
+    "title": "WireMock",
+    "logo": "https://wiremock.org/images/logos/wiremock/logo-wide.svg",
+    "affiliateLink": "https://wiremock.org/",
+    "pricing": "free",
+    "category": "mock-data",
+    "description": "Flexible API mocking tool for testing. Simulate HTTP-based APIs for testing with request matching and response templating.",
+    "tags": [
+      "api-mock",
+      "java",
+      "stub",
+      "simulation"
+    ]
+  },
+  {
+    "slug": "pact",
+    "title": "Pact",
+    "logo": "https://pact.io/assets/img/logo-black.png",
+    "affiliateLink": "https://pact.io/",
+    "pricing": "free",
+    "category": "mock-data",
+    "description": "Consumer-driven contract testing framework. Ensure service compatibility without integration environments.",
+    "tags": [
+      "contract-testing",
+      "microservices",
+      "consumer-driven",
+      "cdc"
+    ]
+  },
+  {
+    "slug": "mockito",
+    "title": "Mockito",
+    "logo": "https://raw.githubusercontent.com/mockito/mockito/main/src/main/javadoc/org/mockito/logo.png",
+    "affiliateLink": "https://site.mockito.org/",
+    "pricing": "free",
+    "category": "mock-data",
+    "description": "Most popular mocking framework for Java unit tests. Clean and simple API for creating mocks and verifying interactions.",
+    "tags": [
+      "java",
+      "mocking",
+      "unit-testing",
+      "tdd"
+    ]
+  },
+  {
+    "slug": "percy",
+    "title": "Percy",
+    "logo": "https://percy.io/static/images/percy-logo-dark.svg",
+    "affiliateLink": "https://percy.io/",
+    "pricing": "freemium",
+    "category": "visual-testing",
+    "description": "Visual testing and review platform by BrowserStack. Catch visual regressions with pixel-by-pixel comparisons.",
+    "tags": [
+      "visual-regression",
+      "screenshots",
+      "browserstack",
+      "ci-cd"
+    ]
+  },
+  {
+    "slug": "applitools",
+    "title": "Applitools",
+    "logo": "https://applitools.com/wp-content/uploads/2023/05/logo.svg",
+    "affiliateLink": "https://applitools.com/",
+    "pricing": "freemium",
+    "category": "visual-testing",
+    "description": "AI-powered visual testing platform. Uses Visual AI to detect meaningful visual differences and ignore noise.",
+    "tags": [
+      "visual-ai",
+      "smart-comparison",
+      "cross-browser",
+      "enterprise"
+    ]
+  },
+  {
+    "slug": "chromatic",
+    "title": "Chromatic",
+    "logo": "https://www.chromatic.com/favicon.ico",
+    "affiliateLink": "https://www.chromatic.com/",
+    "pricing": "freemium",
+    "category": "visual-testing",
+    "description": "Visual testing platform for Storybook. Automate visual and interaction tests for UI components.",
+    "tags": [
+      "storybook",
+      "components",
+      "ui-testing",
+      "design-systems"
+    ]
+  },
+  {
+    "slug": "testrail",
+    "title": "TestRail",
+    "logo": "https://www.testrail.com/wp-content/themes/flavor/assets/img/testrail-logo-color.svg",
+    "affiliateLink": "https://www.testrail.com/",
+    "pricing": "paid",
+    "category": "test-management",
+    "description": "Comprehensive test case management platform. Organize tests, track results, and integrate with popular tools.",
+    "tags": [
+      "test-management",
+      "enterprise",
+      "reporting",
+      "integration"
+    ]
+  },
+  {
+    "slug": "xray",
+    "title": "Xray",
+    "logo": "https://www.getxray.app/hubfs/xray-logo.svg",
+    "affiliateLink": "https://www.getxray.app/",
+    "pricing": "freemium",
+    "category": "test-management",
+    "description": "Native test management app for Jira. Manage manual and automated tests directly within your Jira workflow.",
+    "tags": [
+      "jira",
+      "test-management",
+      "atlassian",
+      "agile"
+    ]
+  },
+  {
+    "slug": "allure-report",
+    "title": "Allure Report",
+    "logo": "https://avatars.githubusercontent.com/u/5879127?s=200&v=4",
+    "affiliateLink": "https://allurereport.org/",
+    "pricing": "free",
+    "category": "test-management",
+    "description": "Flexible, lightweight test report framework. Generate beautiful, comprehensive reports for any test framework.",
+    "tags": [
+      "reporting",
+      "beautiful",
+      "framework-agnostic",
+      "opensource"
+    ]
+  },
+  {
+    "slug": "github-actions",
+    "title": "GitHub Actions",
+    "logo": "https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg",
+    "affiliateLink": "https://github.com/features/actions",
+    "pricing": "freemium",
+    "category": "cicd-devops",
+    "description": "GitHub's native CI/CD solution. Automate workflows directly from your repository with powerful YAML configuration.",
+    "tags": [
+      "ci-cd",
+      "github",
+      "automation",
+      "workflow"
+    ]
+  },
+  {
+    "slug": "circleci",
+    "title": "CircleCI",
+    "logo": "https://www.vectorlogo.zone/logos/circleci/circleci-icon.svg",
+    "affiliateLink": "https://circleci.com/",
+    "pricing": "freemium",
+    "category": "cicd-devops",
+    "description": "Cloud-native CI/CD platform. Fast builds, easy configuration, and excellent Docker support for modern development.",
+    "tags": [
+      "ci-cd",
+      "cloud",
+      "docker",
+      "fast"
+    ]
+  },
+  {
+    "slug": "snyk",
+    "title": "Snyk",
+    "logo": "https://res.cloudinary.com/snyk/image/upload/v1537345894/press-kit/brand/logo-black.png",
+    "affiliateLink": "https://snyk.io/",
+    "pricing": "freemium",
+    "category": "security-testing",
+    "description": "Developer-first security platform. Find and fix vulnerabilities in code, dependencies, containers, and infrastructure.",
+    "tags": [
+      "security",
+      "dependency-scanning",
+      "devsecops",
+      "vulnerabilities"
+    ]
+  },
+  {
+    "slug": "trivy",
+    "title": "Trivy",
+    "logo": "https://aquasecurity.github.io/trivy/latest/imgs/logo.png",
+    "affiliateLink": "https://trivy.dev/",
+    "pricing": "free",
+    "category": "security-testing",
+    "description": "Comprehensive security scanner by Aqua Security. Scan containers, filesystems, git repos, and Kubernetes for vulnerabilities.",
+    "tags": [
+      "container-security",
+      "vulnerability-scanner",
+      "kubernetes",
+      "opensource"
+    ]
+  },
+  {
+    "slug": "nuclei",
+    "title": "Nuclei",
+    "logo": "https://nuclei.projectdiscovery.io/static/nuclei-logo.svg",
+    "affiliateLink": "https://nuclei.projectdiscovery.io/",
+    "pricing": "free",
+    "category": "security-testing",
+    "description": "Fast and customizable vulnerability scanner. Template-based scanning with massive community-contributed templates.",
+    "tags": [
+      "vulnerability-scanner",
+      "templates",
+      "fast",
+      "community"
+    ]
+  },
+  {
+    "slug": "espresso",
+    "title": "Espresso",
+    "logo": "https://developer.android.com/static/images/training/testing/espresso.png",
+    "affiliateLink": "https://developer.android.com/training/testing/espresso",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "Android's official UI testing framework. Write reliable UI tests with automatic synchronization and simple API.",
+    "tags": [
+      "android",
+      "google",
+      "ui-testing",
+      "native"
+    ]
+  },
+  {
+    "slug": "xctest",
+    "title": "XCTest",
+    "logo": "https://developer.apple.com/assets/elements/icons/xcode/xcode-96x96_2x.png",
+    "affiliateLink": "https://developer.apple.com/documentation/xctest",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "Apple's official testing framework for iOS, macOS, tvOS, and watchOS. Integrated with Xcode for unit and UI tests.",
+    "tags": [
+      "ios",
+      "apple",
+      "xcode",
+      "swift"
+    ]
+  },
+  {
+    "slug": "robot-framework",
+    "title": "Robot Framework",
+    "logo": "https://robotframework.org/img/RF.svg",
+    "affiliateLink": "https://robotframework.org/",
+    "pricing": "free",
+    "category": "web-automation",
+    "description": "Generic open-source automation framework. Keyword-driven testing with rich ecosystem of libraries for web, API, and more.",
+    "tags": [
+      "keyword-driven",
+      "python",
+      "extensible",
+      "rpa"
+    ]
+  },
+  {
+    "slug": "cucumber",
+    "title": "Cucumber",
+    "logo": "https://cucumber.io/cucumber/media/images/logos/cucumber-logo.svg",
+    "affiliateLink": "https://cucumber.io/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "BDD testing framework using Gherkin syntax. Write tests in plain language that both developers and stakeholders understand.",
+    "tags": [
+      "bdd",
+      "gherkin",
+      "collaboration",
+      "living-documentation"
+    ]
+  },
+  {
+    "slug": "stryker",
+    "title": "Stryker Mutator",
+    "logo": "https://stryker-mutator.io/images/stryker.svg",
+    "affiliateLink": "https://stryker-mutator.io/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "Mutation testing framework. Improve your tests by introducing bugs (mutants) and checking if tests catch them.",
+    "tags": [
+      "mutation-testing",
+      "test-quality",
+      "javascript",
+      "coverage"
+    ]
+  },
+  {
+    "slug": "lambdatest",
+    "title": "LambdaTest",
+    "logo": "https://www.lambdatest.com/resources/images/logos/logo.svg",
+    "affiliateLink": "https://www.lambdatest.com/",
+    "pricing": "freemium",
+    "category": "cloud-testing",
+    "description": "AI-powered cloud testing platform. Cross-browser testing on 3000+ real browsers and OS combinations.",
+    "tags": [
+      "cloud-testing",
+      "cross-browser",
+      "ai-powered",
+      "real-devices"
+    ]
+  },
+  {
+    "slug": "headspin",
+    "title": "HeadSpin",
+    "logo": "https://www.headspin.io/hs-fs/hubfs/HeadSpin_Logo_2020.png",
+    "affiliateLink": "https://www.headspin.io/",
+    "pricing": "paid",
+    "category": "cloud-testing",
+    "description": "Global device cloud and AI-powered testing platform. Test on real devices worldwide with performance insights.",
+    "tags": [
+      "real-devices",
+      "global",
+      "ai-insights",
+      "performance"
+    ]
   }
 ]

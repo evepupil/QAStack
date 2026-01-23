@@ -927,5 +927,455 @@
       "开源"
     ],
     "content": "keploy.md"
+  },
+  {
+    "slug": "jest",
+    "title": "Jest",
+    "logo": "https://jestjs.io/img/jest.png",
+    "affiliateLink": "https://jestjs.io/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "Facebook 出品的 JavaScript 测试框架。零配置、速度快，内置代码覆盖率、Mock 和快照测试功能。",
+    "tags": [
+      "JavaScript",
+      "单元测试",
+      "Facebook",
+      "快照测试"
+    ]
+  },
+  {
+    "slug": "vitest",
+    "title": "Vitest",
+    "logo": "https://vitest.dev/logo.svg",
+    "affiliateLink": "https://vitest.dev/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "由 Vite 驱动的极速单元测试框架。原生支持 ESM 和 TypeScript，API 兼容 Jest。",
+    "tags": [
+      "JavaScript",
+      "Vite",
+      "现代化",
+      "极速"
+    ]
+  },
+  {
+    "slug": "puppeteer",
+    "title": "Puppeteer",
+    "logo": "https://www.vectorlogo.zone/logos/ppaboraborapuppeteer/ppaboraborapuppeteer-icon.svg",
+    "affiliateLink": "https://pptr.dev/",
+    "pricing": "free",
+    "category": "web-automation",
+    "description": "Google 出品的 Node.js 库，用于控制 Chrome/Chromium。适合网页抓取、PDF 生成和自动化 UI 测试。",
+    "tags": [
+      "Google",
+      "Chrome",
+      "无头浏览器",
+      "自动化"
+    ]
+  },
+  {
+    "slug": "webdriverio",
+    "title": "WebdriverIO",
+    "logo": "https://webdriver.io/img/logo-webdriver-io.png",
+    "affiliateLink": "https://webdriver.io/",
+    "pricing": "free",
+    "category": "web-automation",
+    "description": "下一代 Node.js 浏览器和移动端自动化测试框架。支持 WebDriver、DevTools 和云服务。",
+    "tags": [
+      "WebDriver",
+      "Node.js",
+      "自动化",
+      "跨浏览器"
+    ]
+  },
+  {
+    "slug": "rest-assured",
+    "title": "REST Assured",
+    "logo": "https://rest-assured.io/img/logo-transparent.png",
+    "affiliateLink": "https://rest-assured.io/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "简化 REST 服务测试的 Java DSL。流式 API 设计让编写接口测试直观易读。",
+    "tags": [
+      "Java",
+      "REST接口",
+      "DSL",
+      "流式API"
+    ]
+  },
+  {
+    "slug": "karate",
+    "title": "Karate",
+    "logo": "https://raw.githubusercontent.com/karatelabs/karate/master/karate-core/src/main/resources/karate-logo.svg",
+    "affiliateLink": "https://karatelabs.github.io/karate/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "开源的统一测试自动化框架，集成 API 测试、Mock、性能和 UI 自动化。无需编码即可使用。",
+    "tags": [
+      "接口测试",
+      "BDD",
+      "无代码",
+      "Gherkin"
+    ]
+  },
+  {
+    "slug": "hoppscotch",
+    "title": "Hoppscotch",
+    "logo": "https://hoppscotch.io/icon.png",
+    "affiliateLink": "https://hoppscotch.io/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "开源 API 开发生态系统。轻量、快速、界面美观的 Postman 替代品，支持实时协作。",
+    "tags": [
+      "开源",
+      "轻量级",
+      "PWA",
+      "实时协作"
+    ]
+  },
+  {
+    "slug": "locust",
+    "title": "Locust",
+    "logo": "https://locust.io/static/img/logo.png",
+    "affiliateLink": "https://locust.io/",
+    "pricing": "free",
+    "category": "performance-testing",
+    "description": "用 Python 编写的现代负载测试框架。使用 Python 代码定义用户行为，支持分布式和可扩展。",
+    "tags": [
+      "Python",
+      "负载测试",
+      "分布式",
+      "可扩展"
+    ]
+  },
+  {
+    "slug": "artillery",
+    "title": "Artillery",
+    "logo": "https://www.artillery.io/img/artillery-icon.svg",
+    "affiliateLink": "https://artillery.io/",
+    "pricing": "freemium",
+    "category": "performance-testing",
+    "description": "现代化的强大负载测试工具。支持 HTTP、WebSocket、Socket.io 等，使用 YAML 定义场景。",
+    "tags": [
+      "负载测试",
+      "Node.js",
+      "WebSocket",
+      "YAML"
+    ]
+  },
+  {
+    "slug": "wiremock",
+    "title": "WireMock",
+    "logo": "https://wiremock.org/images/logos/wiremock/logo-wide.svg",
+    "affiliateLink": "https://wiremock.org/",
+    "pricing": "free",
+    "category": "mock-data",
+    "description": "灵活的 API Mock 工具。模拟 HTTP API 进行测试，支持请求匹配和响应模板。",
+    "tags": [
+      "API模拟",
+      "Java",
+      "桩服务",
+      "仿真"
+    ]
+  },
+  {
+    "slug": "pact",
+    "title": "Pact",
+    "logo": "https://pact.io/assets/img/logo-black.png",
+    "affiliateLink": "https://pact.io/",
+    "pricing": "free",
+    "category": "mock-data",
+    "description": "消费者驱动的契约测试框架。无需集成环境即可确保服务之间的兼容性。",
+    "tags": [
+      "契约测试",
+      "微服务",
+      "消费者驱动",
+      "CDC"
+    ]
+  },
+  {
+    "slug": "mockito",
+    "title": "Mockito",
+    "logo": "https://raw.githubusercontent.com/mockito/mockito/main/src/main/javadoc/org/mockito/logo.png",
+    "affiliateLink": "https://site.mockito.org/",
+    "pricing": "free",
+    "category": "mock-data",
+    "description": "Java 单元测试中最流行的 Mock 框架。简洁的 API 用于创建 Mock 对象和验证交互。",
+    "tags": [
+      "Java",
+      "Mock",
+      "单元测试",
+      "TDD"
+    ]
+  },
+  {
+    "slug": "percy",
+    "title": "Percy",
+    "logo": "https://percy.io/static/images/percy-logo-dark.svg",
+    "affiliateLink": "https://percy.io/",
+    "pricing": "freemium",
+    "category": "visual-testing",
+    "description": "BrowserStack 旗下的视觉测试和评审平台。通过像素级比较捕获视觉回归。",
+    "tags": [
+      "视觉回归",
+      "截图",
+      "BrowserStack",
+      "CI/CD"
+    ]
+  },
+  {
+    "slug": "applitools",
+    "title": "Applitools",
+    "logo": "https://applitools.com/wp-content/uploads/2023/05/logo.svg",
+    "affiliateLink": "https://applitools.com/",
+    "pricing": "freemium",
+    "category": "visual-testing",
+    "description": "AI 驱动的视觉测试平台。使用视觉 AI 检测有意义的视觉差异，忽略噪音干扰。",
+    "tags": [
+      "视觉AI",
+      "智能比较",
+      "跨浏览器",
+      "企业级"
+    ]
+  },
+  {
+    "slug": "chromatic",
+    "title": "Chromatic",
+    "logo": "https://www.chromatic.com/favicon.ico",
+    "affiliateLink": "https://www.chromatic.com/",
+    "pricing": "freemium",
+    "category": "visual-testing",
+    "description": "Storybook 的视觉测试平台。自动化 UI 组件的视觉和交互测试。",
+    "tags": [
+      "Storybook",
+      "组件测试",
+      "UI测试",
+      "设计系统"
+    ]
+  },
+  {
+    "slug": "testrail",
+    "title": "TestRail",
+    "logo": "https://www.testrail.com/wp-content/themes/flavor/assets/img/testrail-logo-color.svg",
+    "affiliateLink": "https://www.testrail.com/",
+    "pricing": "paid",
+    "category": "test-management",
+    "description": "综合性测试用例管理平台。组织测试、跟踪结果，与主流工具无缝集成。",
+    "tags": [
+      "测试管理",
+      "企业级",
+      "报告",
+      "集成"
+    ]
+  },
+  {
+    "slug": "xray",
+    "title": "Xray",
+    "logo": "https://www.getxray.app/hubfs/xray-logo.svg",
+    "affiliateLink": "https://www.getxray.app/",
+    "pricing": "freemium",
+    "category": "test-management",
+    "description": "Jira 原生测试管理应用。在 Jira 工作流中直接管理手动和自动化测试。",
+    "tags": [
+      "Jira",
+      "测试管理",
+      "Atlassian",
+      "敏捷"
+    ]
+  },
+  {
+    "slug": "allure-report",
+    "title": "Allure Report",
+    "logo": "https://avatars.githubusercontent.com/u/5879127?s=200&v=4",
+    "affiliateLink": "https://allurereport.org/",
+    "pricing": "free",
+    "category": "test-management",
+    "description": "灵活轻量的测试报告框架。为任何测试框架生成美观、全面的报告。",
+    "tags": [
+      "测试报告",
+      "美观",
+      "框架无关",
+      "开源"
+    ]
+  },
+  {
+    "slug": "github-actions",
+    "title": "GitHub Actions",
+    "logo": "https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg",
+    "affiliateLink": "https://github.com/features/actions",
+    "pricing": "freemium",
+    "category": "cicd-devops",
+    "description": "GitHub 原生的 CI/CD 解决方案。通过强大的 YAML 配置直接在代码仓库中自动化工作流。",
+    "tags": [
+      "CI/CD",
+      "GitHub",
+      "自动化",
+      "工作流"
+    ]
+  },
+  {
+    "slug": "circleci",
+    "title": "CircleCI",
+    "logo": "https://www.vectorlogo.zone/logos/circleci/circleci-icon.svg",
+    "affiliateLink": "https://circleci.com/",
+    "pricing": "freemium",
+    "category": "cicd-devops",
+    "description": "云原生 CI/CD 平台。构建速度快、配置简单，对 Docker 支持优秀，适合现代开发。",
+    "tags": [
+      "CI/CD",
+      "云端",
+      "Docker",
+      "快速"
+    ]
+  },
+  {
+    "slug": "snyk",
+    "title": "Snyk",
+    "logo": "https://res.cloudinary.com/snyk/image/upload/v1537345894/press-kit/brand/logo-black.png",
+    "affiliateLink": "https://snyk.io/",
+    "pricing": "freemium",
+    "category": "security-testing",
+    "description": "开发者优先的安全平台。查找和修复代码、依赖、容器和基础设施中的漏洞。",
+    "tags": [
+      "安全",
+      "依赖扫描",
+      "DevSecOps",
+      "漏洞检测"
+    ]
+  },
+  {
+    "slug": "trivy",
+    "title": "Trivy",
+    "logo": "https://aquasecurity.github.io/trivy/latest/imgs/logo.png",
+    "affiliateLink": "https://trivy.dev/",
+    "pricing": "free",
+    "category": "security-testing",
+    "description": "Aqua Security 出品的综合安全扫描器。扫描容器、文件系统、Git 仓库和 Kubernetes 的漏洞。",
+    "tags": [
+      "容器安全",
+      "漏洞扫描",
+      "Kubernetes",
+      "开源"
+    ]
+  },
+  {
+    "slug": "nuclei",
+    "title": "Nuclei",
+    "logo": "https://nuclei.projectdiscovery.io/static/nuclei-logo.svg",
+    "affiliateLink": "https://nuclei.projectdiscovery.io/",
+    "pricing": "free",
+    "category": "security-testing",
+    "description": "快速可定制的漏洞扫描器。基于模板扫描，拥有大量社区贡献的扫描模板。",
+    "tags": [
+      "漏洞扫描",
+      "模板化",
+      "高速",
+      "社区"
+    ]
+  },
+  {
+    "slug": "espresso",
+    "title": "Espresso",
+    "logo": "https://developer.android.com/static/images/training/testing/espresso.png",
+    "affiliateLink": "https://developer.android.com/training/testing/espresso",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "Android 官方 UI 测试框架。自动同步机制和简洁 API 让你编写可靠的 UI 测试。",
+    "tags": [
+      "Android",
+      "Google",
+      "UI测试",
+      "原生"
+    ]
+  },
+  {
+    "slug": "xctest",
+    "title": "XCTest",
+    "logo": "https://developer.apple.com/assets/elements/icons/xcode/xcode-96x96_2x.png",
+    "affiliateLink": "https://developer.apple.com/documentation/xctest",
+    "pricing": "free",
+    "category": "mobile-testing",
+    "description": "Apple 官方测试框架，支持 iOS、macOS、tvOS 和 watchOS。与 Xcode 集成进行单元测试和 UI 测试。",
+    "tags": [
+      "iOS",
+      "Apple",
+      "Xcode",
+      "Swift"
+    ]
+  },
+  {
+    "slug": "robot-framework",
+    "title": "Robot Framework",
+    "logo": "https://robotframework.org/img/RF.svg",
+    "affiliateLink": "https://robotframework.org/",
+    "pricing": "free",
+    "category": "web-automation",
+    "description": "通用的开源自动化框架。关键字驱动测试，拥有丰富的库生态支持 Web、API 等场景。",
+    "tags": [
+      "关键字驱动",
+      "Python",
+      "可扩展",
+      "RPA"
+    ]
+  },
+  {
+    "slug": "cucumber",
+    "title": "Cucumber",
+    "logo": "https://cucumber.io/cucumber/media/images/logos/cucumber-logo.svg",
+    "affiliateLink": "https://cucumber.io/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "使用 Gherkin 语法的 BDD 测试框架。用自然语言编写测试，开发人员和业务人员都能理解。",
+    "tags": [
+      "BDD",
+      "Gherkin",
+      "协作",
+      "活文档"
+    ]
+  },
+  {
+    "slug": "stryker",
+    "title": "Stryker Mutator",
+    "logo": "https://stryker-mutator.io/images/stryker.svg",
+    "affiliateLink": "https://stryker-mutator.io/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "变异测试框架。通过注入 Bug（变异体）来验证测试是否能捕获它们，提升测试质量。",
+    "tags": [
+      "变异测试",
+      "测试质量",
+      "JavaScript",
+      "覆盖率"
+    ]
+  },
+  {
+    "slug": "lambdatest",
+    "title": "LambdaTest",
+    "logo": "https://www.lambdatest.com/resources/images/logos/logo.svg",
+    "affiliateLink": "https://www.lambdatest.com/",
+    "pricing": "freemium",
+    "category": "cloud-testing",
+    "description": "AI 驱动的云测试平台。在 3000+ 真实浏览器和操作系统组合上进行跨浏览器测试。",
+    "tags": [
+      "云测试",
+      "跨浏览器",
+      "AI驱动",
+      "真机"
+    ]
+  },
+  {
+    "slug": "headspin",
+    "title": "HeadSpin",
+    "logo": "https://www.headspin.io/hs-fs/hubfs/HeadSpin_Logo_2020.png",
+    "affiliateLink": "https://www.headspin.io/",
+    "pricing": "paid",
+    "category": "cloud-testing",
+    "description": "全球设备云和 AI 驱动的测试平台。在全球各地的真实设备上测试，获取性能洞察。",
+    "tags": [
+      "真机",
+      "全球化",
+      "AI洞察",
+      "性能"
+    ]
   }
 ]
