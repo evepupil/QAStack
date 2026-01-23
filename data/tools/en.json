@@ -594,5 +594,37 @@
       "devops",
       "virtualization"
     ]
+  },
+  {
+    "slug": "testing-library",
+    "title": "Testing Library",
+    "logo": null,
+    "affiliateLink": "https://testing-library.com/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "A family of testing utilities that encourages testing from the user's perspective. Write maintainable tests that don't break with implementation changes.",
+    "tags": [
+      "unit-testing",
+      "react",
+      "dom",
+      "user-centric"
+    ],
+    "content": "testing-library.md"
+  },
+  {
+    "slug": "keploy",
+    "title": "Keploy",
+    "logo": "/images/tools/keploy.png",
+    "affiliateLink": "https://keploy.io/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "Open-source API testing platform that auto-generates tests from API calls. Record real traffic and replay it as test cases with zero code changes.",
+    "tags": [
+      "api-testing",
+      "test-generation",
+      "mocking",
+      "opensource"
+    ],
+    "content": "keploy.md"
   }
 ]

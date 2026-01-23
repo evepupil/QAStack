@@ -895,5 +895,37 @@
       "DevOps",
       "虚拟化"
     ]
+  },
+  {
+    "slug": "testing-library",
+    "title": "Testing Library",
+    "logo": null,
+    "affiliateLink": "https://testing-library.com/",
+    "pricing": "free",
+    "category": "unit-testing",
+    "description": "一套鼓励从用户视角进行测试的工具库。编写不因实现细节变化而失效的可维护测试，包含 React、Vue、Angular 等多个版本。",
+    "tags": [
+      "单元测试",
+      "React",
+      "DOM",
+      "用户视角"
+    ],
+    "content": "testing-library.md"
+  },
+  {
+    "slug": "keploy",
+    "title": "Keploy",
+    "logo": "/images/tools/keploy.png",
+    "affiliateLink": "https://keploy.io/",
+    "pricing": "free",
+    "category": "api-testing",
+    "description": "开源 API 测试平台，自动从 API 调用生成测试用例。录制真实流量并回放为测试，零代码改动，支持自动生成 Mock。",
+    "tags": [
+      "接口测试",
+      "测试生成",
+      "Mock",
+      "开源"
+    ],
+    "content": "keploy.md"
   }
 ]
