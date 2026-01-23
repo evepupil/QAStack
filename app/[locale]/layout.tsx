@@ -1,5 +1,7 @@
 import { Header } from "@/components/Header";
+import { SearchProvider } from "@/components/SearchProvider";
 import { locales, type Locale } from "@/lib/i18n";
+import { getAllTools } from "@/lib/tools";
 import { getTranslations } from "@/lib/translations";
 
 interface LocaleLayoutProps {
@@ -14,11 +16,16 @@ export async function generateStaticParams() {
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
   const t = getTranslations(locale as Locale);
+  const tools = await getAllTools(locale as Locale);
 
   return (
-    <>
+    <SearchProvider
+      tools={tools}
+      locale={locale as Locale}
+      translations={t.search}
+    >
       <Header locale={locale as Locale} translations={t} />
       {children}
-    </>
+    </SearchProvider>
   );
 }

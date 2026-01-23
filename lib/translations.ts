@@ -21,6 +21,16 @@ export const translations = {
       paid: 'Paid',
       freemium: 'Freemium',
     },
+    search: {
+      placeholder: 'Search tools...',
+      noResults: 'No tools found for',
+      tryDifferent: 'Try different keywords or browse',
+      allTools: 'all tools',
+      navigate: 'Navigate',
+      select: 'Select',
+      close: 'Close',
+      openSearch: 'Search',
+    },
     blog: {
       title: 'Blog',
       description: 'Latest articles and insights about software testing',
@@ -46,6 +56,16 @@ export const translations = {
       free: '免费',
       paid: '付费',
       freemium: '免费增值',
+    },
+    search: {
+      placeholder: '搜索工具...',
+      noResults: '未找到工具',
+      tryDifferent: '尝试其他关键词或浏览',
+      allTools: '所有工具',
+      navigate: '导航',
+      select: '选择',
+      close: '关闭',
+      openSearch: '搜索',
     },
     blog: {
       title: '博客',
