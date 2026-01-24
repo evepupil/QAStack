@@ -1,26 +1,10 @@
 [
   {
-    "slug": "top-software-testing-youtube-channels-2024",
-    "title": "Top Software Testing Youtube Channels To Follow in 2024",
-    "excerpt": "In this articles, I will talk about some of the best YouTube channels to help you sharpen your software testing skills.",
-    "coverImage": "/images/blog/youtube-channels.jpg",
-    "date": "Oct 1, 2024",
-    "category": "Test Tools"
-  },
-  {
-    "slug": "top-7-github-repositories-better-tester-2024",
-    "title": "Top 7 Github Repositories That Will help you become a better tester in 2024",
-    "excerpt": "These repositories are full of useful articles, blogs and podcasts to help you learn software testing.",
-    "coverImage": "/images/blog/github-repos.jpg",
-    "date": "Oct 2, 2024",
-    "category": "Test Tools"
-  },
-  {
-    "slug": "best-software-testing-tools-2024",
-    "title": "The best software testing tools in 2024",
-    "excerpt": "A hand curated collection of the best tools on the internet to supercharge your testing. Whether you're looking for a new Automation tool, framework alternative, a new way...",
-    "coverImage": "/images/blog/best-tools.jpg",
-    "date": "Oct 1, 2024",
-    "category": "Test Tools"
+    "slug": "browser-automation-tools-comparison-2025",
+    "title": "浏览器自动化工具对比：Playwright vs Selenium vs Cypress vs Puppeteer",
+    "excerpt": "2025年主流浏览器自动化测试工具的全面对比。深入分析Playwright、Selenium、Cypress、Puppeteer和WebdriverIO的优缺点及最佳使用场景。",
+    "coverImage": "/images/blog/browser-automation.jpg",
+    "date": "2026年1月24日",
+    "category": "测试工具"
   }
 ]
