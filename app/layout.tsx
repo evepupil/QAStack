@@ -3,7 +3,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://qastack.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://qastack.chaosyn.com'),
   title: {
     default: "QAStack - Software Testing Tools Directory",
     template: "%s | QAStack"

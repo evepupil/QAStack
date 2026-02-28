@@ -9,7 +9,7 @@ export const dynamic = 'force-static';
  * Next.js 会在构建时自动调用此函数生成 sitemap.xml
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qastack.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://qastack.chaosyn.com';
 
   // 获取所有工具
   const tools = await getAllTools();
